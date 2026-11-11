@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "source": "module-counts",
+  "count": 2206,
+  "queryName": "Liveplus Functional Automation",
+  "priorityModuleCoverage": [
+    {
+      "priority": 1,
+      "executionModule": "Create Pad and Well",
+      "adoModule": "LP - Welcome screen/Pads and well screen",
+      "tcCount": 109
+    },
+    {
+      "priority": 2,
+      "executionModule": "Well and Treatment",
+      "adoModule": "LP - Well and treatment",
+      "tcCount": 99
+    },
+    {
+      "priority": 3,
+      "executionModule": "Job Comment",
+      "adoModule": "LP - Job Comment",
+      "tcCount": 13
+    },
+    {
+      "priority": 4,
+      "executionModule": "Channel Input Model",
+      "adoModule": "LP - Channel inputs",
+      "tcCount": 100
+    },
+    {
+      "priority": 5,
+      "executionModule": "Drilled Hole",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 261
+    },
+    {
+      "priority": 6,
+      "executionModule": "Casing",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 16
+    },
+    {
+      "priority": 7,
+      "executionModule": "Surface Line and Tubing",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 15
+    },
+    {
+      "priority": 8,
+      "executionModule": "Perforation",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 15
+    },
+    {
+      "priority": 9,
+      "executionModule": "Directional Survey",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 9
+    },
+    {
+      "priority": 10,
+      "executionModule": "Path Summary",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 6
+    },
+    {
+      "priority": 11,
+      "executionModule": "Schematic 2D",
+      "adoModule": "LP - Wellbore configuration",
+      "tcCount": 11
+    },
+    {
+      "priority": 12,
+      "executionModule": "Heat Transfer Parameters",
+      "adoModule": "LP - Heat transfer parameters",
+      "tcCount": 42
+    },
+    {
+      "priority": 13,
+      "executionModule": "Reservoir Parameters",
+      "adoModule": "LP - Reservoir Parameters",
+      "tcCount": 48
+    },
+    {
+      "priority": 14,
+      "executionModule": "Add Material",
+      "adoModule": "LP - Material Selection",
+      "tcCount": 215
+    },
+    {
+      "priority": 15,
+      "executionModule": "Add Chemical",
+      "adoModule": "LP - Material Selection",
+      "tcCount": 21
+    },
+    {
+      "priority": 16,
+      "executionModule": "Edit Fluid",
+      "adoModule": "LP - Material Selection",
+      "tcCount": 10
+    },
+    {
+      "priority": 17,
+      "executionModule": "Design Treatment Scheduled",
+      "adoModule": "LP - Treatment Schedule",
+      "tcCount": 230
+    },
+    {
+      "priority": 18,
+      "executionModule": "Actual Treatment Scheduled",
+      "adoModule": "LP - Treatment Schedule",
+      "tcCount": 11
+    },
+    {
+      "priority": 19,
+      "executionModule": "Treatment Totals",
+      "adoModule": "LP - Treatment Schedule",
+      "tcCount": 4
+    },
+    {
+      "priority": 20,
+      "executionModule": "Entry Friction",
+      "adoModule": "LP - Analysis - Entry Friction",
+      "tcCount": 46
+    },
+    {
+      "priority": 21,
+      "executionModule": "Plots",
+      "adoModule": "LP - Plot",
+      "tcCount": 278
+    },
+    {
+      "priority": 22,
+      "executionModule": "Plot in Word Report",
+      "adoModule": "LP - Plot",
+      "tcCount": 1
+    },
+    {
+      "priority": 23,
+      "executionModule": "Material Usage",
+      "adoModule": "LP - Material Usage",
+      "tcCount": 10
+    },
+    {
+      "priority": 24,
+      "executionModule": "Post Job Data",
+      "adoModule": "LP - Post Job Data",
+      "tcCount": 20
+    },
+    {
+      "priority": 25,
+      "executionModule": "User Defined Channel",
+      "adoModule": "LP - User defined Channels",
+      "tcCount": 41
+    },
+    {
+      "priority": 26,
+      "executionModule": "Version Control",
+      "adoModule": "LP - Version Control",
+      "tcCount": 80
+    },
+    {
+      "priority": 27,
+      "executionModule": "Dashboard",
+      "adoModule": "LP - Dashboard",
+      "tcCount": 52
+    },
+    {
+      "priority": 28,
+      "executionModule": "User Management",
+      "adoModule": "LP - User Management",
+      "tcCount": 150
+    }
+  ],
+  "cases": []
+}

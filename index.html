@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live+ Command Center</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --bg-2: #111827;
+    --card: #1a2332;
+    --line: #243244;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --blue: #3b82f6;
+    --blue-dim: rgba(59, 130, 246, 0.16);
+    --green: #22c55e;
+    --green-dim: rgba(34, 197, 94, 0.16);
+    --red: #ef4444;
+    --red-dim: rgba(239, 68, 68, 0.16);
+    --amber: #f59e0b;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    --sans: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); }
+  body { min-height: 100vh; }
+  a { color: #93c5fd; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+  .side {
+    background: #0e1626;
+    border-right: 1px solid var(--line);
+    padding: 22px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .brand { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; }
+  .mark {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: grid; place-items: center; font-weight: 700;
+    background: linear-gradient(160deg, #3b82f6, #1d4ed8);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  }
+  .brand strong { display: block; font-size: 15px; }
+  .brand span { color: var(--muted); font-size: 12px; }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); padding: 10px 12px; border-radius: 12px;
+    margin-bottom: 4px; font-size: 14px;
+  }
+  .nav a.active, .nav a:hover { background: var(--blue-dim); color: white; text-decoration: none; }
+  .side-foot { position: absolute; bottom: 20px; left: 16px; right: 16px; color: var(--muted); font-size: 12px; }
+  .main { padding: 28px 32px 64px; max-width: 1280px; }
+  .top { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; margin-bottom: 22px; }
+  h1 { margin: 0; font-size: 28px; letter-spacing: -0.03em; }
+  .sub { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%), var(--card);
+    border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 16px 18px;
+  }
+  .kpi .label { color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .kpi .value { font-size: 34px; font-weight: 700; letter-spacing: -0.03em; margin-top: 6px; }
+  .kpi .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .envs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 8px 0 22px; }
+  .env { cursor: pointer; transition: transform .2s ease, border-color .2s ease; }
+  .env:hover { transform: translateY(-2px); }
+  .env.selected { border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f6, var(--shadow); }
+  .env h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.08em; color: var(--muted); }
+  .env .stat { font-size: 20px; font-weight: 700; }
+  .bar { display: flex; gap: 4px; margin-top: 12px; height: 8px; }
+  .bar i { flex: 1; border-radius: 99px; background: #243244; }
+  .bar i.pass { background: var(--green); }
+  .bar i.fail { background: var(--red); }
+  .bar i.partial { background: var(--amber); }
+  .layout { display: grid; grid-template-columns: 320px 1fr; gap: 14px; }
+  .run {
+    display: grid; grid-template-columns: 10px 1fr; gap: 10px;
+    padding: 10px; border-radius: 12px; cursor: pointer; border: 1px solid transparent;
+  }
+  .run:hover, .run.selected { background: rgba(59, 130, 246, 0.08); border-color: var(--line); }
+  .dot { width: 10px; height: 10px; border-radius: 99px; margin-top: 5px; background: var(--muted); }
+  .dot.pass { background: var(--green); }
+  .dot.fail { background: var(--red); }
+  .dot.partial { background: var(--amber); }
+  .run b { font-size: 13px; font-weight: 600; }
+  .run small { display: block; color: var(--muted); margin-top: 2px; }
+  .section-title { margin: 0 0 12px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .head-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .pill { border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+  .pill.pass { background: var(--green-dim); color: #86efac; }
+  .pill.fail { background: var(--red-dim); color: #fca5a5; }
+  .pill.partial { background: rgba(245, 158, 11, 0.16); color: #fcd34d; }
+  .pill.idle { background: #243244; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  td { padding: 9px 10px; border-bottom: 1px solid rgba(36, 50, 68, 0.7); }
+  tr.fail td { background: rgba(239, 68, 68, 0.06); }
+  .donut-wrap { display: flex; align-items: center; gap: 16px; min-width: 280px; justify-content: flex-end; }
+  .run-link { color: #94a3b8; margin-top: 8px; font-size: 13px; line-height: 1.4; max-width: 280px; }
+  .donut {
+    width: 84px; height: 84px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: conic-gradient(var(--green) calc(var(--p) * 1%), #243244 0);
+  }
+  .donut span {
+    width: 58px; height: 58px; border-radius: 50%; background: var(--card);
+    display: grid; place-items: center; font-weight: 700; font-size: 14px;
+  }
+  .empty { color: var(--muted); padding: 12px 0; }
+  @media (max-width: 980px) {
+    .app { grid-template-columns: 1fr; }
+    .side { position: relative; height: auto; display: flex; gap: 18px; align-items: center; }
+    .nav { display: flex; gap: 6px; }
+    .side-foot { display: none; }
+    .kpis, .envs, .layout { grid-template-columns: 1fr; }
+    .main { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="mark">L+</div><div><strong>Live+ Command</strong><span>Run intelligence</span></div></div>
+    <nav class="nav">
+      <a class="active" href="#overview">Overview</a>
+      <a href="#history">History</a>
+      <a href="#modules">Modules</a>
+    </nav>
+    <div class="side-foot" id="generated"></div>
+  </aside>
+  <main class="main">
+    <div class="top" id="overview">
+      <div>
+        <h1>Live+ Command Center</h1>
+        <p class="sub" id="subtitle"></p>
+      </div>
+      <div id="selected-meta"></div>
+    </div>
+    <section class="kpis" id="kpis"></section>
+    <section class="envs" id="envs"></section>
+    <section class="layout">
+      <article class="card" id="history">
+        <h2 class="section-title">History</h2>
+        <div id="history-list"></div>
+      </article>
+      <article class="card" id="modules">
+        <div class="head-row">
+          <h2 class="section-title" style="margin:0">Modules on this run</h2>
+          <div id="run-pill"></div>
+        </div>
+        <div id="module-table"></div>
+      </article>
+    </section>
+  </main>
+</div>
+<script id="lp-data" type="application/json">{"generatedAt":"2026-11-11T20:30:37.288Z","inventory":2204,"mapped":1913,"filter":"AI Playwright Automation = Automated, excluding Minifrac and Depro","pipelineUrl":"https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288","runs":[{"id":50987,"env":"stage","number":"LivePlus-Priority-stage-20261111.14","result":"succeeded","when":"2026-11-11T20:17:54.6602023Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50987","modulesPassed":1,"modulesFailed":0,"modulesRan":1,"moduleTotal":28,"casesPassed":109,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50985,"env":"stage","number":"LivePlus-Priority-stage-20261111.12","result":"succeeded","when":"2026-11-11T20:06:07.9448693Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50985","modulesPassed":3,"modulesFailed":0,"modulesRan":3,"moduleTotal":28,"casesPassed":221,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"passed","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"passed","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50982,"env":"stage","number":"LivePlus-Priority-stage-20261111.11","result":"partiallySucceeded","when":"2026-11-11T19:28:14.9743944Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50982","modulesPassed":24,"modulesFailed":4,"modulesRan":28,"moduleTotal":28,"casesPassed":1651,"casesFailed":262,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"passed","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"passed","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"failed","detail":"Channel inputs"},{"priority":5,"name":"Drilled Hole","cases":261,"status":"passed","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"passed","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"passed","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"passed","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"passed","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"passed","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"passed","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"passed","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"passed","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"passed","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"passed","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"passed","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"passed","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"failed","detail":"Actual schedule"},{"priority":19,"name":"Treatment Totals","cases":4,"status":"passed","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"passed","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"passed","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"failed","detail":"Word report"},{"priority":23,"name":"Material Usage","cases":10,"status":"passed","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"passed","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"passed","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"passed","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"passed","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"failed","detail":"Operator"}]},{"id":50974,"env":"stage","number":"LivePlus-Priority-stage-20261111.10","result":"succeeded","when":"2026-11-11T18:06:37.2899965Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50974","modulesPassed":1,"modulesFailed":0,"modulesRan":1,"moduleTotal":28,"casesPassed":109,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50969,"env":"stage","number":"LivePlus-Priority-stage-20261111.9","result":"succeeded","when":"2026-11-11T17:43:02.2468785Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50969","modulesPassed":1,"modulesFailed":0,"modulesRan":1,"moduleTotal":28,"casesPassed":109,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50939,"env":"stage","number":"LivePlus-Priority-stage-20261111.7","result":"partiallySucceeded","when":"2026-11-11T16:26:50.9305455Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50939","modulesPassed":23,"modulesFailed":5,"modulesRan":28,"moduleTotal":28,"casesPassed":1645,"casesFailed":268,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"passed","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"passed","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"failed","detail":"Channel inputs"},{"priority":5,"name":"Drilled Hole","cases":261,"status":"passed","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"passed","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"passed","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"passed","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"passed","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"failed","detail":"Path summary"},{"priority":11,"name":"Schematic 2D","cases":11,"status":"passed","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"passed","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"passed","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"passed","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"passed","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"passed","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"passed","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"failed","detail":"Actual schedule"},{"priority":19,"name":"Treatment Totals","cases":4,"status":"passed","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"passed","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"passed","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"failed","detail":"Word report"},{"priority":23,"name":"Material Usage","cases":10,"status":"passed","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"passed","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"passed","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"passed","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"passed","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"failed","detail":"Operator"}]},{"id":50938,"env":"stage","number":"LivePlus-Priority-stage-20261111.6","result":"failed","when":"2026-11-11T15:37:59.4088066Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50938","modulesPassed":0,"modulesFailed":0,"modulesRan":0,"moduleTotal":28,"casesPassed":0,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"not-run","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50927,"env":"stage","number":"LivePlus-Priority-stage-20261111.4","result":"failed","when":"2026-11-11T14:49:35.8047215Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50927","modulesPassed":0,"modulesFailed":0,"modulesRan":0,"moduleTotal":28,"casesPassed":0,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"not-run","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50924,"env":"stage","number":"LivePlus-Priority-stage-20261111.3","result":"failed","when":"2026-11-11T14:35:29.9795388Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50924","modulesPassed":0,"modulesFailed":0,"modulesRan":0,"moduleTotal":28,"casesPassed":0,"casesFailed":0,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"not-run","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"not-run","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"not-run","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"not-run","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"not-run","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"not-run","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"not-run","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"not-run","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"not-run","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"not-run","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"not-run","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"not-run","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"not-run","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"not-run","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"not-run","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"not-run","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"not-run","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"not-run","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"not-run","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"not-run","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"not-run","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"not-run","detail":""},{"priority":23,"name":"Material Usage","cases":10,"status":"not-run","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"not-run","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"not-run","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"not-run","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"not-run","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"not-run","detail":""}]},{"id":50882,"env":"stage","number":"LivePlus-Priority-stage-20261111.1","result":"partiallySucceeded","when":"2026-11-11T09:09:47.9716601Z","triggeredBy":"Akshay Sawant","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=50882","modulesPassed":23,"modulesFailed":5,"modulesRan":28,"moduleTotal":28,"casesPassed":1631,"casesFailed":282,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"passed","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"passed","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"failed","detail":"Channel inputs"},{"priority":5,"name":"Drilled Hole","cases":261,"status":"passed","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"passed","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"passed","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"passed","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"passed","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"passed","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"passed","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"passed","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"passed","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"passed","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"passed","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"passed","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"passed","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"failed","detail":"Actual schedule"},{"priority":19,"name":"Treatment Totals","cases":4,"status":"passed","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"passed","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"passed","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"failed","detail":"Word report"},{"priority":23,"name":"Material Usage","cases":10,"status":"passed","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"failed","detail":"post job data fill clear and save "},{"priority":25,"name":"User Defined Channel","cases":41,"status":"passed","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"passed","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"passed","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"failed","detail":"Operator"}]},{"id":47499,"env":"qa","number":"LivePlus-Priority-qa-20261016.1","result":"partiallySucceeded","when":"2026-10-16T05:44:19.8113781Z","triggeredBy":"Annem Subba","url":"https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=47499","modulesPassed":27,"modulesFailed":1,"modulesRan":28,"moduleTotal":28,"casesPassed":1912,"casesFailed":1,"modules":[{"priority":1,"name":"Create Pad and Well","cases":109,"status":"passed","detail":""},{"priority":2,"name":"Well and Treatment","cases":99,"status":"passed","detail":""},{"priority":3,"name":"Job Comment","cases":13,"status":"passed","detail":""},{"priority":4,"name":"Channel Input Model","cases":100,"status":"passed","detail":""},{"priority":5,"name":"Drilled Hole","cases":261,"status":"passed","detail":""},{"priority":6,"name":"Casing","cases":16,"status":"passed","detail":""},{"priority":7,"name":"Surface Line and Tubing","cases":15,"status":"passed","detail":""},{"priority":8,"name":"Perforation","cases":15,"status":"passed","detail":""},{"priority":9,"name":"Directional Survey","cases":9,"status":"passed","detail":""},{"priority":10,"name":"Path Summary","cases":6,"status":"passed","detail":""},{"priority":11,"name":"Schematic 2D","cases":11,"status":"passed","detail":""},{"priority":12,"name":"Heat Transfer Parameters","cases":42,"status":"passed","detail":""},{"priority":13,"name":"Reservoir Parameters","cases":48,"status":"passed","detail":""},{"priority":14,"name":"Add Material","cases":215,"status":"passed","detail":""},{"priority":15,"name":"Add Chemical","cases":21,"status":"passed","detail":""},{"priority":16,"name":"Edit Fluid","cases":10,"status":"passed","detail":""},{"priority":17,"name":"Design Treatment Scheduled","cases":230,"status":"passed","detail":""},{"priority":18,"name":"Actual Treatment Scheduled","cases":11,"status":"passed","detail":""},{"priority":19,"name":"Treatment Totals","cases":4,"status":"passed","detail":""},{"priority":20,"name":"Entry Friction","cases":46,"status":"passed","detail":""},{"priority":21,"name":"Plots","cases":278,"status":"passed","detail":""},{"priority":22,"name":"Plot in Word Report","cases":1,"status":"failed","detail":"Word report"},{"priority":23,"name":"Material Usage","cases":10,"status":"passed","detail":""},{"priority":24,"name":"Post Job Data","cases":20,"status":"passed","detail":""},{"priority":25,"name":"User Defined Channel","cases":41,"status":"passed","detail":""},{"priority":26,"name":"Version Control","cases":80,"status":"passed","detail":""},{"priority":27,"name":"Dashboard","cases":52,"status":"passed","detail":""},{"priority":28,"name":"User Management","cases":150,"status":"passed","detail":""}]}]}</script>
+<script>
+const data = JSON.parse(document.getElementById('lp-data').textContent);
+const $ = (id) => document.getElementById(id);
+function when(iso) {
+  if (!iso) return '';
+  const d = new Date(new Date(iso).getTime());
+  return d.toLocaleString(undefined, { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+}
+function resultLabel(result) {
+  if (result === 'partiallySucceeded') return 'Partial';
+  if (result === 'succeeded') return 'Passed';
+  if (result === 'failed') return 'Failed';
+  return result || '—';
+}
+function tone(run) {
+  if (!run) return 'idle';
+  if (run.modulesFailed > 0) return run.modulesRan < run.moduleTotal ? 'partial' : 'fail';
+  if (run.modulesRan && run.modulesRan < run.moduleTotal) return 'partial';
+  if (run.modulesRan) return 'pass';
+  return 'idle';
+}
+function latestOf(env) {
+  return data.runs.find((r) => r.env === env) || null;
+}
+let selected = data.runs.find((r) => r.env === 'stage') || data.runs[0] || null;
+
+function render() {
+  const gen = new Date(data.generatedAt);
+  $('generated').textContent = 'Updated ' + gen.toLocaleString();
+  $('subtitle').textContent = data.inventory.toLocaleString() + ' automated test cases · Minifrac and Depro excluded · ' + data.mapped.toLocaleString() + ' mapped onto these screens';
+  const run = selected;
+  const rate = run && (run.casesPassed + run.casesFailed) ? Math.round(100 * run.casesPassed / (run.casesPassed + run.casesFailed)) : 0;
+  $('kpis').innerHTML = [
+    ['Automated cases', data.inventory.toLocaleString(), 'Query total'],
+    ['Cases passed', run ? run.casesPassed.toLocaleString() : '—', run ? run.env.toUpperCase() + ' · this run' : ''],
+    ['Cases failed', run ? run.casesFailed.toLocaleString() : '—', run ? run.modulesFailed + ' modules failed' : ''],
+    ['Modules', run ? run.modulesPassed + '/' + run.modulesRan : '—', run && run.modulesRan < run.moduleTotal ? 'Suite did not finish' : 'Executed'],
+  ].map(([l,v,h]) => '<article class="card kpi"><div class="label">'+l+'</div><div class="value">'+v+'</div><div class="hint">'+h+'</div></article>').join('');
+
+  $('envs').innerHTML = ['qa','uat','stage','prod'].map((env) => {
+    const latest = latestOf(env);
+    const history = data.runs.filter((r) => r.env === env).slice(0, 8);
+    const bars = history.map((r) => '<i class="'+tone(r)+'"></i>').join('') || '<i></i><i></i><i></i>';
+    const full = data.runs.find((r) => r.env === env && r.modulesRan >= 20);
+    const label = latest ? (latest.modulesPassed + '/' + (latest.modulesRan || 0) + ' modules') : 'No run yet';
+    const extra = full && latest && full.id !== latest.id ? '<div class="hint" style="color:#94a3b8;margin-top:6px">Last full suite '+full.modulesPassed+'/'+full.modulesRan+'</div>' : '';
+    return '<article class="card env'+(run && run.env===env ? ' selected' : '')+'" data-env="'+env+'"><h2>'+env.toUpperCase()+'</h2><div class="stat">'+label+'</div>'+extra+'<div class="bar">'+bars+'</div></article>';
+  }).join('');
+
+  $('selected-meta').innerHTML = run ? '<div class="donut-wrap"><div class="donut" style="--p:'+rate+'"><span>'+rate+'%</span></div><div class="run-link"><div class="pill '+tone(run)+'">'+resultLabel(run.result)+'</div><div><a href="'+run.url+'">'+run.number+'</a><br>'+when(run.when)+'</div></div></div>' : '';
+
+  $('history-list').innerHTML = data.runs.length ? data.runs.map((r) =>
+    '<div class="run'+(run && run.id===r.id ? ' selected' : '')+'" data-id="'+r.id+'"><div class="dot '+tone(r)+'"></div><div><b>'+r.env.toUpperCase()+' · '+(r.modulesRan ? r.modulesPassed+'/'+r.modulesRan : 'No results')+'</b><small>'+when(r.when)+' · '+r.number+'</small></div></div>'
+  ).join('') : '<div class="empty">No completed runs yet.</div>';
+
+  const mods = run ? run.modules : [];
+  $('run-pill').innerHTML = run ? '<span class="pill '+tone(run)+'">'+run.env.toUpperCase()+'</span>' : '';
+  $('module-table').innerHTML = mods.length ? '<table><thead><tr><th>Module</th><th>Cases</th><th>Result</th></tr></thead><tbody>'+
+    mods.map((m) => '<tr class="'+m.status+'"><td>'+m.name+'</td><td>'+m.cases.toLocaleString()+'</td><td>'+(m.status==='passed'?'Pass':m.status==='failed'?'Fail · '+m.detail:'Not run')+'</td></tr>').join('')+
+    '</tbody></table>' : '<div class="empty">Pick a run from history.</div>';
+}
+document.body.addEventListener('click', (e) => {
+  const env = e.target.closest('[data-env]');
+  if (env) { selected = latestOf(env.dataset.env) || selected; render(); return; }
+  const row = e.target.closest('[data-id]');
+  if (row) { selected = data.runs.find((r) => String(r.id) === row.dataset.id) || selected; render(); }
+});
+render();
+</script>
+</body>
+</html>
