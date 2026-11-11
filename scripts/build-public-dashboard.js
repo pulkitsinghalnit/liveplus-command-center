@@ -316,7 +316,13 @@ function tone(run) {
 function latestOf(env) {
   return data.runs.find((r) => r.env === env) || null;
 }
-let selected = data.runs.find((r) => r.env === 'stage') || data.runs[0] || null;
+function fullOf(env) {
+  return data.runs.find((r) => r.env === env && r.modulesRan >= 20) || null;
+}
+function headlineOf(env) {
+  return fullOf(env) || latestOf(env);
+}
+let selected = headlineOf('stage') || data.runs[0] || null;
 
 function render() {
   const gen = new Date(data.generatedAt);
@@ -333,18 +339,19 @@ function render() {
 
   $('envs').innerHTML = ['qa','uat','stage','prod'].map((env) => {
     const latest = latestOf(env);
+    const full = fullOf(env);
+    const headline = headlineOf(env);
     const history = data.runs.filter((r) => r.env === env).slice(0, 8);
     const bars = history.map((r) => '<i class="'+tone(r)+'"></i>').join('') || '<i></i><i></i><i></i>';
-    const full = data.runs.find((r) => r.env === env && r.modulesRan >= 20);
-    const label = latest ? (latest.modulesPassed + '/' + (latest.modulesRan || 0) + ' modules') : 'No run yet';
-    const extra = full && latest && full.id !== latest.id ? '<div class="hint" style="color:#94a3b8;margin-top:6px">Last full suite '+full.modulesPassed+'/'+full.modulesRan+'</div>' : '';
+    const label = headline ? (headline.modulesPassed + '/' + (headline.modulesRan || 0) + ' modules') : 'No run yet';
+    const extra = latest && full && latest.id !== full.id ? '<div class="hint" style="color:#94a3b8;margin-top:6px">Newer short run '+latest.modulesPassed+'/'+latest.modulesRan+'</div>' : '';
     return '<article class="card env'+(run && run.env===env ? ' selected' : '')+'" data-env="'+env+'"><h2>'+env.toUpperCase()+'</h2><div class="stat">'+label+'</div>'+extra+'<div class="bar">'+bars+'</div></article>';
   }).join('');
 
   $('selected-meta').innerHTML = run ? '<div class="donut-wrap"><div class="donut" style="--p:'+rate+'"><span>'+rate+'%</span></div><div class="run-link"><div class="pill '+tone(run)+'">'+resultLabel(run.result)+'</div><div><a href="'+run.url+'">'+run.number+'</a><br>'+when(run.when)+'</div></div></div>' : '';
 
   $('history-list').innerHTML = data.runs.length ? data.runs.map((r) =>
-    '<div class="run'+(run && run.id===r.id ? ' selected' : '')+'" data-id="'+r.id+'"><div class="dot '+tone(r)+'"></div><div><b>'+r.env.toUpperCase()+' · '+(r.modulesRan ? r.modulesPassed+'/'+r.modulesRan : 'No results')+'</b><small>'+when(r.when)+' · '+r.number+'</small></div></div>'
+    '<div class="run'+(run && run.id===r.id ? ' selected' : '')+'" data-id="'+r.id+'"><div class="dot '+tone(r)+'"></div><div><b>'+r.env.toUpperCase()+' · '+(r.modulesRan ? r.modulesPassed+'/'+r.modulesRan : 'No results')+' · #'+r.id+'</b><small>'+when(r.when)+' · '+r.number+'</small></div></div>'
   ).join('') : '<div class="empty">No completed runs yet.</div>';
 
   const mods = run ? run.modules : [];
@@ -355,7 +362,7 @@ function render() {
 }
 document.body.addEventListener('click', (e) => {
   const env = e.target.closest('[data-env]');
-  if (env) { selected = latestOf(env.dataset.env) || selected; render(); return; }
+  if (env) { selected = headlineOf(env.dataset.env) || selected; render(); return; }
   const row = e.target.closest('[data-id]');
   if (row) { selected = data.runs.find((r) => String(r.id) === row.dataset.id) || selected; render(); }
 });
@@ -381,6 +388,8 @@ async function main() {
   const file = path.join(outDir, 'index.html');
   fs.writeFileSync(file, page(payload));
   fs.writeFileSync(path.join(outDir, 'history.json'), JSON.stringify(payload, null, 2));
+  fs.copyFileSync(file, path.join(rootDir(), 'index.html'));
+  fs.copyFileSync(path.join(outDir, 'history.json'), path.join(rootDir(), 'history.json'));
   console.log(`Wrote ${file}`);
   console.log(`Runs embedded: ${payload.runs.length}. Automated cases: ${payload.inventory}`);
 }
