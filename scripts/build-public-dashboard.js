@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { loadRuns, gradeRun, caseCounts, ENVS } = require('./update-ado-dashboard');
+const { casesForPriority } = require('./test-case-rows');
 
 const ORG = 'Stratagen';
 const PROJECT = 'Live Plus';
@@ -110,13 +111,22 @@ function buildPayload(inv, grouped, totalCases) {
         moduleTotal: counts.counts.size,
         casesPassed: grade.casesPassed,
         casesFailed: grade.casesFailed,
-        modules: grade.rows.map((row) => ({
-          priority: row.priority,
-          name: names.get(row.priority) || `P${row.priority}`,
-          cases: row.cases,
-          status: row.status,
-          detail: row.detail,
-        })),
+        modules: grade.rows.map((row) => {
+          const item = {
+            priority: row.priority,
+            name: names.get(row.priority) || `P${row.priority}`,
+            cases: row.cases,
+            status: row.status,
+            detail: row.detail,
+          };
+          if (row.status === 'failed') {
+            item.failedCases = casesForPriority(row.priority, inv).map((c) => ({
+              id: Number(c.id),
+              title: String(c.title || ''),
+            }));
+          }
+          return item;
+        }),
       });
     }
   }
@@ -125,6 +135,7 @@ function buildPayload(inv, grouped, totalCases) {
     generatedAt: new Date().toISOString(),
     inventory: totalCases,
     mapped: counts.mapped,
+    outside: Math.max(0, totalCases - counts.mapped),
     filter: 'AI Playwright Automation = Automated, excluding Minifrac and Depro',
     pipelineUrl: 'https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288',
     runs,
@@ -245,6 +256,11 @@ function page(data) {
     display: grid; place-items: center; font-weight: 700; font-size: 14px;
   }
   .empty { color: var(--muted); padding: 12px 0; }
+  .failed-wrap { margin-top: 16px; }
+  .failed-math { margin: 8px 0 12px; }
+  .failed-list { max-height: 440px; overflow: auto; }
+  .failed-list a { color: #93c5fd; text-decoration: none; font-variant-numeric: tabular-nums; }
+  .failed-list a:hover { text-decoration: underline; }
   @media (max-width: 980px) {
     .app { grid-template-columns: 1fr; }
     .side { position: relative; height: auto; display: flex; gap: 18px; align-items: center; }
@@ -289,6 +305,14 @@ function page(data) {
         <div id="module-table"></div>
       </article>
     </section>
+    <section class="card failed-wrap" id="failed">
+      <div class="head-row">
+        <h2 class="section-title" style="margin:0">Failed test cases</h2>
+        <div id="failed-count"></div>
+      </div>
+      <p class="sub failed-math" id="failed-math"></p>
+      <div class="failed-list" id="failed-list"></div>
+    </section>
   </main>
 </div>
 <script id="lp-data" type="application/json">${json}</script>
@@ -313,6 +337,11 @@ function tone(run) {
   if (run.modulesRan) return 'pass';
   return 'idle';
 }
+function esc(value) {
+  return String(value == null ? '' : value).replace(/[&<>"']/g, (ch) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[ch]));
+}
 function latestOf(env) {
   return data.runs.find((r) => r.env === env) || null;
 }
@@ -329,11 +358,13 @@ function render() {
   $('generated').textContent = 'Updated ' + gen.toLocaleString();
   $('subtitle').textContent = data.inventory.toLocaleString() + ' automated test cases · Minifrac and Depro excluded · ' + data.mapped.toLocaleString() + ' mapped onto these screens';
   const run = selected;
-  const rate = run && (run.casesPassed + run.casesFailed) ? Math.round(100 * run.casesPassed / (run.casesPassed + run.casesFailed)) : 0;
+  const onScreens = run ? run.casesPassed + run.casesFailed : 0;
+  const outside = data.outside || Math.max(0, data.inventory - data.mapped);
+  const rate = onScreens ? Math.round(100 * run.casesPassed / onScreens) : 0;
   $('kpis').innerHTML = [
-    ['Automated cases', data.inventory.toLocaleString(), 'Query total'],
-    ['Cases passed', run ? run.casesPassed.toLocaleString() : '—', run ? run.env.toUpperCase() + ' · this run' : ''],
-    ['Cases failed', run ? run.casesFailed.toLocaleString() : '—', run ? run.modulesFailed + ' modules failed' : ''],
+    ['Automated cases', data.inventory.toLocaleString(), data.mapped.toLocaleString() + ' on these screens'],
+    ['Cases passed', run ? run.casesPassed.toLocaleString() : '—', run ? 'of ' + onScreens.toLocaleString() + ' on this run' : ''],
+    ['Cases failed', run ? run.casesFailed.toLocaleString() : '—', run ? outside.toLocaleString() + ' sit outside the 28 screens' : ''],
     ['Modules', run ? run.modulesPassed + '/' + run.modulesRan : '—', run && run.modulesRan < run.moduleTotal ? 'Suite did not finish' : 'Executed'],
   ].map(([l,v,h]) => '<article class="card kpi"><div class="label">'+l+'</div><div class="value">'+v+'</div><div class="hint">'+h+'</div></article>').join('');
 
@@ -357,8 +388,18 @@ function render() {
   const mods = run ? run.modules : [];
   $('run-pill').innerHTML = run ? '<span class="pill '+tone(run)+'">'+run.env.toUpperCase()+'</span>' : '';
   $('module-table').innerHTML = mods.length ? '<table><thead><tr><th>Module</th><th>Cases</th><th>Result</th></tr></thead><tbody>'+
-    mods.map((m) => '<tr class="'+m.status+'"><td>'+m.name+'</td><td>'+m.cases.toLocaleString()+'</td><td>'+(m.status==='passed'?'Pass':m.status==='failed'?'Fail · '+m.detail:'Not run')+'</td></tr>').join('')+
+    mods.map((m) => '<tr class="'+m.status+'"><td>'+esc(m.name)+'</td><td>'+m.cases.toLocaleString()+'</td><td>'+(m.status==='passed'?'Pass':m.status==='failed'?'Fail · '+esc(m.detail):'Not run')+'</td></tr>').join('')+
     '</tbody></table>' : '<div class="empty">Pick a run from history.</div>';
+
+  const failed = mods.flatMap((m) => (m.failedCases || []).map((c) => ({ ...c, module: m.name, detail: m.detail })));
+  const notRun = Math.max(0, data.mapped - onScreens);
+  $('failed-count').innerHTML = run ? '<span class="pill fail">'+failed.length.toLocaleString()+'</span>' : '';
+  $('failed-math').textContent = run
+    ? run.casesPassed.toLocaleString() + ' passed + ' + run.casesFailed.toLocaleString() + ' failed = ' + onScreens.toLocaleString() + ' on these screens. ' + outside.toLocaleString() + ' of the ' + data.inventory.toLocaleString() + ' automated cases are not on these 28 modules' + (notRun ? ', and ' + notRun.toLocaleString() + ' mapped cases were not in this run' : '') + '.'
+    : '';
+  $('failed-list').innerHTML = failed.length ? '<table><thead><tr><th>ID</th><th>Test case</th><th>Module</th></tr></thead><tbody>'+
+    failed.map((c) => '<tr class="fail"><td><a href="https://dev.azure.com/Stratagen/Live%20Plus/_workitems/edit/'+c.id+'" target="_blank" rel="noopener">'+c.id+'</a></td><td>'+esc(c.title)+'</td><td>'+esc(c.module)+(c.detail ? ' · '+esc(c.detail) : '')+'</td></tr>').join('')+
+    '</tbody></table>' : '<div class="empty">No failed test cases on this run.</div>';
 }
 document.body.addEventListener('click', (e) => {
   const env = e.target.closest('[data-env]');
