@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-11-11T21:12:35.225Z",
+  "generatedAt": "2026-11-12T02:23:09.603Z",
   "inventory": 2204,
   "mapped": 1913,
+  "outside": 291,
   "filter": "AI Playwright Automation = Automated, excluding Minifrac and Depro",
   "pipelineUrl": "https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288",
   "runs": [
@@ -6710,6 +6711,5 @@
         }
       ]
     }
-  ],
-  "outside": 291
+  ]
 }
