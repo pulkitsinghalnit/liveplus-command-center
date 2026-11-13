@@ -1,11 +1,2497 @@
 {
-  "generatedAt": "2026-11-13T04:55:58.919Z",
+  "generatedAt": "2026-11-13T12:51:48.699Z",
   "inventory": 2204,
   "mapped": 1913,
   "outside": 291,
   "filter": "AI Playwright Automation = Automated, excluding Minifrac and Depro",
   "pipelineUrl": "https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288",
   "runs": [
+    {
+      "id": 51331,
+      "env": "stage",
+      "number": "LivePlus-Priority-stage-20261113.1",
+      "result": "partiallySucceeded",
+      "when": "2026-11-13T12:42:54.5310837Z",
+      "triggeredBy": "Akshay Sawant",
+      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51331",
+      "modulesPassed": 26,
+      "modulesFailed": 2,
+      "modulesRan": 28,
+      "moduleTotal": 28,
+      "casesPassed": 1641,
+      "casesFailed": 272,
+      "modules": [
+        {
+          "priority": 1,
+          "name": "Create Pad and Well",
+          "cases": 109,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 2,
+          "name": "Well and Treatment",
+          "cases": 99,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 3,
+          "name": "Job Comment",
+          "cases": 13,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 4,
+          "name": "Channel Input Model",
+          "cases": 100,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 5,
+          "name": "Drilled Hole",
+          "cases": 261,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 6,
+          "name": "Casing",
+          "cases": 16,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 7,
+          "name": "Surface Line and Tubing",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 8,
+          "name": "Perforation",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 9,
+          "name": "Directional Survey",
+          "cases": 9,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 10,
+          "name": "Path Summary",
+          "cases": 6,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 11,
+          "name": "Schematic 2D",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 12,
+          "name": "Heat Transfer Parameters",
+          "cases": 42,
+          "status": "failed",
+          "detail": "heat transfer parameters defaults and form",
+          "failedCases": [
+            {
+              "id": 130184,
+              "title": "Verify Heat Transfer screen loads correctly"
+            },
+            {
+              "id": 130186,
+              "title": "Verify user can input heat transfer parameters"
+            },
+            {
+              "id": 130188,
+              "title": "Verify heat transfer calculations trigger correctly"
+            },
+            {
+              "id": 130191,
+              "title": "Verify heat transfer validation for incorrect inputs"
+            },
+            {
+              "id": 130194,
+              "title": "Verify Heat Transfer data persistence"
+            },
+            {
+              "id": 130236,
+              "title": "Verify recalculation after input changes"
+            },
+            {
+              "id": 134344,
+              "title": "Verify the navigation to the \"Heat Transfer Parameters\" screen"
+            },
+            {
+              "id": 134465,
+              "title": "Save data on Fluid Thermal Properties tab with missing required fields"
+            },
+            {
+              "id": 134470,
+              "title": "On SAVE click, Save the data on Fluid Thermal Properties tab"
+            },
+            {
+              "id": 134753,
+              "title": "Go to the \"Heat Transfer Parameters\" screen and check the heatTransfer API being called or not"
+            },
+            {
+              "id": 134990,
+              "title": "Conditions to check for Heat Transfer"
+            },
+            {
+              "id": 135859,
+              "title": "default \"Use Fracture Center Depth\""
+            },
+            {
+              "id": 135860,
+              "title": "Check the  \"Temperature vs. Depth\""
+            },
+            {
+              "id": 135861,
+              "title": "Verify the fields to be available in Heat Transfer Parameters"
+            },
+            {
+              "id": 135862,
+              "title": "Click on \"Thermal Fluid Property\" button"
+            },
+            {
+              "id": 135863,
+              "title": "Check the checkbox of \"Offshore Well\""
+            },
+            {
+              "id": 135864,
+              "title": "Verify the navigation to the Heat Transfer Parameters screen"
+            },
+            {
+              "id": 135865,
+              "title": "Dehaviour of Enter temperature vs. Depth"
+            },
+            {
+              "id": 135866,
+              "title": "Depth TVD (ft) behaviour"
+            },
+            {
+              "id": 135867,
+              "title": "Behaviour of Sea Current"
+            },
+            {
+              "id": 135868,
+              "title": "Display Temperature at behaviour"
+            },
+            {
+              "id": 135869,
+              "title": "Behaviour of Surface Water Temperature"
+            },
+            {
+              "id": 135870,
+              "title": "Ocean/Wellbore Heat Transfer Coefficient Multiplier behaviour"
+            },
+            {
+              "id": 135871,
+              "title": "Behaviour of Seabed Temperature"
+            },
+            {
+              "id": 135872,
+              "title": "\"save\" and \"next\" button funtionality"
+            },
+            {
+              "id": 135873,
+              "title": "Temperature (F) behaviour"
+            },
+            {
+              "id": 135874,
+              "title": "Navigation to the \"heat transfer parameter\""
+            },
+            {
+              "id": 135875,
+              "title": "Behaviour of Thermal Fluid Properties:"
+            },
+            {
+              "id": 135877,
+              "title": "Offshore Well fields available condition"
+            },
+            {
+              "id": 135878,
+              "title": "Wellbore Heat Transfer Coefficient Multiplier behaviour"
+            },
+            {
+              "id": 135879,
+              "title": "Fracture Heat Transfer Coefficient Multiplier behaviour"
+            },
+            {
+              "id": 135880,
+              "title": "Surface Rock Temperature (°F) behaviour"
+            },
+            {
+              "id": 135881,
+              "title": "1)Surface N2Temperature (°F) behaviour"
+            },
+            {
+              "id": 135885,
+              "title": "Surface CO2 Temperature (°F) behaviour"
+            },
+            {
+              "id": 135886,
+              "title": "Uncheck the \"Use Fracture Center Depth\""
+            },
+            {
+              "id": 135887,
+              "title": "Summary of the fields available on the \"heat transfer parameter"
+            },
+            {
+              "id": 135888,
+              "title": "Navigation to the \"heat transfer parameter\""
+            },
+            {
+              "id": 152695,
+              "title": "Navigate to Heat Transfer Parameters module"
+            },
+            {
+              "id": 152699,
+              "title": "Default values in all fields"
+            },
+            {
+              "id": 152731,
+              "title": "Verify default values in all fields"
+            },
+            {
+              "id": 152786,
+              "title": "Verify Default Thermal Properties Fields"
+            },
+            {
+              "id": 152787,
+              "title": "Enter and Save Thermal Properties Data"
+            }
+          ]
+        },
+        {
+          "priority": 13,
+          "name": "Reservoir Parameters",
+          "cases": 48,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 14,
+          "name": "Add Material",
+          "cases": 215,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 15,
+          "name": "Add Chemical",
+          "cases": 21,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 16,
+          "name": "Edit Fluid",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 17,
+          "name": "Design Treatment Scheduled",
+          "cases": 230,
+          "status": "failed",
+          "detail": "design treatment schedule fill and persist",
+          "failedCases": [
+            {
+              "id": 127656,
+              "title": "Verify Treatment Schedule remains read-only on Dashboard"
+            },
+            {
+              "id": 127692,
+              "title": "Verify latest MQTT schedule displays on Dashboard"
+            },
+            {
+              "id": 127699,
+              "title": "Verify MQTT schedule updates after page refresh"
+            },
+            {
+              "id": 127701,
+              "title": "Verify MQTT schedule updates without requiring manual edits"
+            },
+            {
+              "id": 127703,
+              "title": "Verify non-MQTT wells still allow Treatment Schedule editing"
+            },
+            {
+              "id": 127818,
+              "title": "Verify Progress column values synchronize between Dashboard and Treatment Schedule"
+            },
+            {
+              "id": 127863,
+              "title": "Verify column order after logout/login"
+            },
+            {
+              "id": 127864,
+              "title": "Verify column order after browser refresh"
+            },
+            {
+              "id": 127903,
+              "title": "Verify Step column is editable"
+            },
+            {
+              "id": 127931,
+              "title": "Verify Actual Time values synchronize correctly between Dashboard and Treatment Schedule"
+            },
+            {
+              "id": 127947,
+              "title": "Verify dashboard synchronization with Treatment Schedule Actual tab"
+            },
+            {
+              "id": 130059,
+              "title": "Verify custom column save functionality works for remaining columns"
+            },
+            {
+              "id": 130064,
+              "title": "Verify dropdown sorting remains correct after Step Prop removal"
+            },
+            {
+              "id": 130066,
+              "title": "Verify search functionality works correctly after Step Prop removal"
+            },
+            {
+              "id": 130095,
+              "title": "Verify user cannot create Step Prop custom column through UI"
+            },
+            {
+              "id": 130110,
+              "title": "Verify Step Prop is unavailable for all user roles"
+            },
+            {
+              "id": 130112,
+              "title": "Verify Step Prop remains unavailable after logout/login"
+            },
+            {
+              "id": 131069,
+              "title": "Verify existing Treatment Schedule functionality after rename"
+            },
+            {
+              "id": 131126,
+              "title": "Verify existing Treatment Schedule functionality after rename"
+            },
+            {
+              "id": 131415,
+              "title": "Validate Treatment Schedule module is accessible"
+            },
+            {
+              "id": 133129,
+              "title": "Change in \"Calculate Volume/Time\" section"
+            },
+            {
+              "id": 133130,
+              "title": "Identify current step correctly"
+            },
+            {
+              "id": 133132,
+              "title": "Wrong step identification"
+            },
+            {
+              "id": 133134,
+              "title": "\"Get Schedule\" button disabled in non-ProPilot mode"
+            },
+            {
+              "id": 133135,
+              "title": "Try to edit past step."
+            },
+            {
+              "id": 133136,
+              "title": "Try to delete current step."
+            },
+            {
+              "id": 133137,
+              "title": "\"Back\" button navigation"
+            },
+            {
+              "id": 133139,
+              "title": "Change in \"Select Custom Column\" dropdown"
+            },
+            {
+              "id": 133141,
+              "title": "\"Get Schedule\" button visibility"
+            },
+            {
+              "id": 133142,
+              "title": "Editing enabled for future steps"
+            },
+            {
+              "id": 133143,
+              "title": "Editing disabled for past & current step"
+            },
+            {
+              "id": 133202,
+              "title": "Verify close functionality"
+            },
+            {
+              "id": 133207,
+              "title": "Verify side panel name"
+            },
+            {
+              "id": 133215,
+              "title": "Verify notification hyperlink is present"
+            },
+            {
+              "id": 133216,
+              "title": "Verify seismos data checkbox"
+            },
+            {
+              "id": 133217,
+              "title": "Verify redirection on hyperlink click"
+            },
+            {
+              "id": 133218,
+              "title": "Broken hyperlink"
+            },
+            {
+              "id": 133220,
+              "title": "Redirect to wrong screen"
+            },
+            {
+              "id": 133221,
+              "title": "Hyperlink missing in notification"
+            },
+            {
+              "id": 133224,
+              "title": "Verify single click navigation"
+            },
+            {
+              "id": 133681,
+              "title": "Step Prop column unit updated from klbs to lbs"
+            },
+            {
+              "id": 133822,
+              "title": "Verify Time (min) column position in Dashboard Treatment Schedule full-screen mode"
+            },
+            {
+              "id": 133823,
+              "title": "Verify column order remains correct while editing schedule inline"
+            },
+            {
+              "id": 133828,
+              "title": "Verify Time (min) column is last (rightmost) on Dashboard Treatment Schedule widget"
+            },
+            {
+              "id": 133829,
+              "title": "Verify column alignment remains correct on Dashboard Treatment Schedule widget"
+            },
+            {
+              "id": 133831,
+              "title": "Verify unchecking and re-checking Treatment Schedule in Plots panel preserves column order"
+            },
+            {
+              "id": 133833,
+              "title": "Verify Treatment Schedule widget appears on Dashboard when enabled from Plots panel"
+            },
+            {
+              "id": 133841,
+              "title": "Verify existing Time (min) Actual values unchanged after column reorder"
+            },
+            {
+              "id": 133843,
+              "title": "Verify existing Time (min) Step values unchanged after column reorder"
+            },
+            {
+              "id": 133844,
+              "title": "Verify schedule totals remain unchanged after column reorder"
+            },
+            {
+              "id": 133846,
+              "title": "Verify schedule calculations remain unchanged after column reorder"
+            },
+            {
+              "id": 133861,
+              "title": "Verify Time (min) column is last position on Dashboard Treatment Schedule table"
+            },
+            {
+              "id": 133864,
+              "title": "Verify units for Time (min) column remain unchanged after reorder"
+            },
+            {
+              "id": 133865,
+              "title": "Verify Time (min) header label text remains unchanged after reorder"
+            },
+            {
+              "id": 133866,
+              "title": "Verify Treatment Schedule changes are not shown on Dashboard when MQTT is OFF"
+            },
+            {
+              "id": 133869,
+              "title": "Verify column order persists after navigation within Inputs module"
+            },
+            {
+              "id": 133874,
+              "title": "Verify Treatment Schedule widget cannot be added to Dashboard when MQTT is OFF"
+            },
+            {
+              "id": 133875,
+              "title": "Verify column order persists after logout and login"
+            },
+            {
+              "id": 133876,
+              "title": "Verify column order persists after reopening well"
+            },
+            {
+              "id": 133877,
+              "title": "Verify Treatment Schedule option is NOT available in Dashboard Plots panel when MQTT is OFF"
+            },
+            {
+              "id": 134086,
+              "title": "Treatment schedule screen"
+            },
+            {
+              "id": 134151,
+              "title": "Edge Case: Verify behavior when custom columns are selected and then deselected"
+            },
+            {
+              "id": 134152,
+              "title": "Verify additional columns are added to the end of the table by default"
+            },
+            {
+              "id": 134153,
+              "title": "Verify multi-select functionality in “Select Custom Columns” drop-down"
+            },
+            {
+              "id": 134154,
+              "title": "Verify drop-down label change to “Select Custom Columns”"
+            },
+            {
+              "id": 134159,
+              "title": "Verify button label change to “Import From Design”"
+            },
+            {
+              "id": 134161,
+              "title": "Edge Case: Verify behavior when all custom columns are selected"
+            },
+            {
+              "id": 134163,
+              "title": "Edge Case: Verify behavior when importing design with no data"
+            },
+            {
+              "id": 134228,
+              "title": "Verify Step Alias column position"
+            },
+            {
+              "id": 134229,
+              "title": "Verify Stage Type set to -1 if Flow Rate > 0 for Shut-in"
+            },
+            {
+              "id": 134230,
+              "title": "Verify Stage Type column header renamed to Step Type"
+            },
+            {
+              "id": 134232,
+              "title": "Verify Design Schedule is read-only by default and Edit Schedule button is available"
+            },
+            {
+              "id": 134235,
+              "title": "Verify Flow Rate and Step Length set to 1 and Clean Vol set to 42 when changing from Shut-in, Shut-in w/flowpulses, or Flowback"
+            },
+            {
+              "id": 134236,
+              "title": "Verify Flow Rate and Clean Vol set to 0 for Shut-in or Shut-in w/flowpulses"
+            },
+            {
+              "id": 134239,
+              "title": "Verify Flow Rate and Clean Vol as negative values for Flowback"
+            },
+            {
+              "id": 134383,
+              "title": "Navigate to the Treatment schedule screen"
+            },
+            {
+              "id": 134385,
+              "title": "Validate the include Step Aliases checkbox"
+            },
+            {
+              "id": 134386,
+              "title": "Validate the UI of the Save and Next button"
+            },
+            {
+              "id": 134387,
+              "title": "Validate the button \"Import from design\""
+            },
+            {
+              "id": 134388,
+              "title": "Validate the Treatment details section"
+            },
+            {
+              "id": 134389,
+              "title": "Validate the \"Calculate Volumn/Time\"  section."
+            },
+            {
+              "id": 134401,
+              "title": "Validate the button \"Set Staging from Measured Data\""
+            },
+            {
+              "id": 134402,
+              "title": "Validate the UI of the table in the screen"
+            },
+            {
+              "id": 134403,
+              "title": "Validate the Treatment details section"
+            },
+            {
+              "id": 134404,
+              "title": "Validate the UI of the table in the screen"
+            },
+            {
+              "id": 134405,
+              "title": "Validate the \"Select Custom Columns\" dropdown"
+            },
+            {
+              "id": 134406,
+              "title": "Validate the UI and the placement of the Design treatment schedule tab."
+            },
+            {
+              "id": 134408,
+              "title": "Validate the button \"Set Schedule\""
+            },
+            {
+              "id": 134409,
+              "title": "Validate the UI of the Save and Next button"
+            },
+            {
+              "id": 134410,
+              "title": "Navigate to the Design Treatment schedule screen"
+            },
+            {
+              "id": 134411,
+              "title": "Validate the \"Calculate Volumn/Time\"  section."
+            },
+            {
+              "id": 134412,
+              "title": "Validate the include Step Aliases checkbox"
+            },
+            {
+              "id": 134650,
+              "title": "Validate the Treatment space table"
+            },
+            {
+              "id": 134651,
+              "title": "Validate the include storage Units and the controls under it."
+            },
+            {
+              "id": 134652,
+              "title": "Validate the Totals Split for section."
+            },
+            {
+              "id": 134655,
+              "title": "Validate hte navigation to the Treatment schedule - Totals"
+            },
+            {
+              "id": 134656,
+              "title": "Validate the functionality of Save button"
+            },
+            {
+              "id": 134657,
+              "title": "Validate the \"Totals For\" section."
+            },
+            {
+              "id": 134658,
+              "title": "Validate the functionality of Next button"
+            },
+            {
+              "id": 134659,
+              "title": "Validate \"Total Cost\" field"
+            },
+            {
+              "id": 134661,
+              "title": "Validate the heading of the section and it's UI"
+            },
+            {
+              "id": 134662,
+              "title": "Validate the UI of the \"Additional Items\" table in the screen"
+            },
+            {
+              "id": 134663,
+              "title": "Validate \"Additional Cost Sub Total\" field"
+            },
+            {
+              "id": 134742,
+              "title": "Navigate to the Treatment Schedule - Actual/Design"
+            },
+            {
+              "id": 134744,
+              "title": "Check on the Design Treatment Schedule, there is not Recalculate button"
+            },
+            {
+              "id": 134746,
+              "title": "Check on the Design Treatment Schedule, on SAVE button save and recalculate functionality should happen"
+            },
+            {
+              "id": 134755,
+              "title": "Navigate to the treatment schedule screen"
+            },
+            {
+              "id": 134974,
+              "title": "Conditions to check for Treatment Schedule"
+            },
+            {
+              "id": 136026,
+              "title": "Functional behaviour ofEstimate treating condition button ->Estimated Foam Pressure"
+            },
+            {
+              "id": 136029,
+              "title": "Functional behaviour of Estimate treating condition button ->Estimated Foam Temperature"
+            },
+            {
+              "id": 136030,
+              "title": "Functional behaviour of \"Recalculate\""
+            },
+            {
+              "id": 136031,
+              "title": "Functional behaviour of \"Edit Schedule\""
+            },
+            {
+              "id": 136032,
+              "title": "Functional behaviour of Import from design button"
+            },
+            {
+              "id": 136038,
+              "title": "Check and verify the \"Include Step Aliases\" checkbox"
+            },
+            {
+              "id": 136042,
+              "title": "Verify the behaviour of Treatment info\", dropdown"
+            },
+            {
+              "id": 136043,
+              "title": "Login with Fracpro live+ valid user"
+            },
+            {
+              "id": 136044,
+              "title": "Functional behaviour of Set staging from measured data button"
+            },
+            {
+              "id": 136047,
+              "title": "Go to the Treatment schedle menu option and click on it"
+            },
+            {
+              "id": 136048,
+              "title": "Functional behaviour of Recalculate button"
+            },
+            {
+              "id": 136055,
+              "title": "Cost Calculations"
+            },
+            {
+              "id": 136056,
+              "title": "Cumul Time Calculation"
+            },
+            {
+              "id": 136058,
+              "title": "Edit Schedule - Columns Editable"
+            },
+            {
+              "id": 136059,
+              "title": "Edit Schedule - Stop Editing"
+            },
+            {
+              "id": 136061,
+              "title": "Verify the behaviour of \"Prop mode\" dropdown"
+            },
+            {
+              "id": 136062,
+              "title": "Prop Mode Logic - Ramp 1"
+            },
+            {
+              "id": 136070,
+              "title": "Functional behaviour of \"Stop Schedule editing\""
+            },
+            {
+              "id": 136071,
+              "title": "Functional behaviour of \"Actual\" and \"Injection\""
+            },
+            {
+              "id": 136072,
+              "title": "Functional behavious of \"Include Wb Vol in Pad\" checkbox"
+            },
+            {
+              "id": 136073,
+              "title": "Functional behavious of \"Include Storage Units\" checkbox"
+            },
+            {
+              "id": 136074,
+              "title": "unit Cost ($)"
+            },
+            {
+              "id": 136075,
+              "title": "Functional behaviour of \"Totals for -  Design Schedule\""
+            },
+            {
+              "id": 136076,
+              "title": "Storage Quantity"
+            },
+            {
+              "id": 136077,
+              "title": "Storage Units"
+            },
+            {
+              "id": 136078,
+              "title": "Functional behaviour of \"Design Schedule\" and \"Injection\""
+            },
+            {
+              "id": 136080,
+              "title": "Functional behaviour of \"Totals split by - > Materials\""
+            },
+            {
+              "id": 136081,
+              "title": "Functional behaviour of \"Totals split by - > Injection\""
+            },
+            {
+              "id": 136082,
+              "title": "Include Cost - Unchecked"
+            },
+            {
+              "id": 136083,
+              "title": "Include Storage Units - Table"
+            },
+            {
+              "id": 136084,
+              "title": "Include Cost - Table"
+            },
+            {
+              "id": 136085,
+              "title": "Include Cost - Table"
+            },
+            {
+              "id": 136086,
+              "title": "Additional Items Table"
+            },
+            {
+              "id": 136087,
+              "title": "Include Storage Units - Checkbox"
+            },
+            {
+              "id": 136088,
+              "title": "Include Storage Units - Unchecked"
+            },
+            {
+              "id": 136089,
+              "title": "Include Wb Vol in Pad"
+            },
+            {
+              "id": 136090,
+              "title": "Treatment Specs - Pad Fraction"
+            },
+            {
+              "id": 136091,
+              "title": "Functional behaviour of \"Actual\" and \"Material\""
+            },
+            {
+              "id": 136092,
+              "title": "Functional behaviour of \"Totals for - Actual Data\""
+            },
+            {
+              "id": 136094,
+              "title": "Pumping Step Visibility"
+            },
+            {
+              "id": 136095,
+              "title": "Treatment Specs - Flush Vol"
+            },
+            {
+              "id": 136097,
+              "title": "Include Storage Units - Table"
+            },
+            {
+              "id": 136099,
+              "title": "Material Cost Subtotal"
+            },
+            {
+              "id": 136100,
+              "title": "Verify the column in \"Additional items\" table"
+            },
+            {
+              "id": 136101,
+              "title": "Cost ($)"
+            },
+            {
+              "id": 136102,
+              "title": "Functional behaviour of \"Design Schedule\" and \"Materials\""
+            },
+            {
+              "id": 136103,
+              "title": "verify the Pumping Step field"
+            },
+            {
+              "id": 136104,
+              "title": "Treatment Specs should have fields given in Expected column"
+            },
+            {
+              "id": 136105,
+              "title": "Functional behavious of \"Include Cost\" checkbox"
+            },
+            {
+              "id": 136106,
+              "title": "Treatment Specs - Pad Volume"
+            },
+            {
+              "id": 136107,
+              "title": "Discount (%)"
+            },
+            {
+              "id": 136108,
+              "title": "Include Cost - Checkbox"
+            },
+            {
+              "id": 136109,
+              "title": "Totals for - Actual Data"
+            },
+            {
+              "id": 136110,
+              "title": "Totals for - Design Schedule"
+            },
+            {
+              "id": 136111,
+              "title": "Totals split by - Materials"
+            },
+            {
+              "id": 136112,
+              "title": "Totals split by - Injection"
+            },
+            {
+              "id": 152606,
+              "title": "Verify Design Treatment Schedule Tab Navigation"
+            },
+            {
+              "id": 152609,
+              "title": "Verify Prop Mode default selected option"
+            },
+            {
+              "id": 152610,
+              "title": "Verify Prop Mode default selected option"
+            },
+            {
+              "id": 152611,
+              "title": "verify the treatment schedule header name when treatment type is no foam and prop mode is staged"
+            },
+            {
+              "id": 152613,
+              "title": "Verify Flow Rate value in first row should be Zero by default"
+            },
+            {
+              "id": 152614,
+              "title": "Verify Prop Conc value in first row should be Zero by default"
+            },
+            {
+              "id": 152615,
+              "title": "Verify Clean Vol value in first row should be Zero by default"
+            },
+            {
+              "id": 152616,
+              "title": "Verify Step Length value in first row should be Zero by default"
+            },
+            {
+              "id": 152618,
+              "title": "verify the treatment schedule header name when treatment type is N2 and prop mode is ramped"
+            },
+            {
+              "id": 152629,
+              "title": "verify the treatment schedule header name when treatment type is N2 and prop mode is staged"
+            },
+            {
+              "id": 152630,
+              "title": "verify the treatment schedule header name when treatment type is CO2 and prop mode is staged"
+            },
+            {
+              "id": 152631,
+              "title": "verify the treatment schedule header name when treatment type is CO2 and prop mode is ramped"
+            },
+            {
+              "id": 152632,
+              "title": "verify the treatment schedule header name when treatment type is N2 & CO2 and prop mode is ramped"
+            },
+            {
+              "id": 152633,
+              "title": "verify the treatment schedule header name when treatment type is N2 & CO2 and prop mode is staged"
+            },
+            {
+              "id": 152635,
+              "title": "Data Entry for First Row"
+            },
+            {
+              "id": 152638,
+              "title": "The user verifies the calculated value of Step Length for first row"
+            },
+            {
+              "id": 152639,
+              "title": "The user verifies Step Length field must be read-only and Clean Volume must be enabled"
+            },
+            {
+              "id": 152640,
+              "title": "The user verifies the calculated value of Clean Vol for first row"
+            },
+            {
+              "id": 152642,
+              "title": "The user verifies the calculated value of Clean Vol when Flow Rate is updated for first row"
+            },
+            {
+              "id": 152643,
+              "title": "The user verifies the calculated value of Step Length when Flow Rate is updated for first row"
+            },
+            {
+              "id": 152644,
+              "title": "The user verifies updated Step Length field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152645,
+              "title": "The user verifies updated Clean Vol field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152646,
+              "title": "The user verifies updated Step Length field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152648,
+              "title": "The user verifies Flow Rate 1 matching Flow Rate value for first row"
+            },
+            {
+              "id": 152649,
+              "title": "The user verifies Prop Conc 1 matching Prop Conc 2 value for first row"
+            },
+            {
+              "id": 152650,
+              "title": "The user verifies updated Step Length field value when Flow Rate 1 and Flow Rate 2 are equal for first row"
+            },
+            {
+              "id": 152651,
+              "title": "The user verifies updated Step Length field value when Flow Rate 1 and Flow Rate 2 are different for first row"
+            },
+            {
+              "id": 152652,
+              "title": "The user verifies updated Step Length field value when Prop Conc 2 input field is updated"
+            },
+            {
+              "id": 152653,
+              "title": "The user verifies calculated Clean Vol when calculate is selected as volume from time"
+            },
+            {
+              "id": 152654,
+              "title": "The user verifies updated Step Length field value when Prop Conc 2 input field is updated"
+            },
+            {
+              "id": 152655,
+              "title": "Flow Rate Field Updates"
+            },
+            {
+              "id": 152656,
+              "title": "The user verifies updated Clean Vol field value when Flow Rate 1 input field is updated"
+            },
+            {
+              "id": 152657,
+              "title": "The user verifies updated Clean Vol field value when Flow Rate 2 input field is updated"
+            },
+            {
+              "id": 152658,
+              "title": "The user verifies updated Clean Vol field value when Prop Conc 1 input field is updated"
+            },
+            {
+              "id": 152659,
+              "title": "The user verifies updated Clean Vol field value when Prop Conc second input field is updated"
+            },
+            {
+              "id": 152660,
+              "title": "The user verifies updated Clean Vol field value when Step Length input field is updated"
+            },
+            {
+              "id": 152662,
+              "title": "verifies Flow Rate value must match the Flow Rate 1 value when Prop Mode Changes"
+            },
+            {
+              "id": 152663,
+              "title": "verifies Prop Conc value must match the Prop Conc 1 value when Prop Mode Changes"
+            },
+            {
+              "id": 152664,
+              "title": "The user verifies Flow Rate 1 and Flow Rate 2 field values must be same"
+            },
+            {
+              "id": 152665,
+              "title": "The user verifies Prop Conc 1 and Prop Conc 2 field values must be same"
+            },
+            {
+              "id": 152667,
+              "title": "Clean vol is calculated when treat type is zero and clean vol is zero and Calculate is Time from volume"
+            },
+            {
+              "id": 152668,
+              "title": "The user verifies Clean Volume Calculation when Treat Type = 0, Clean Vol = 0, and Calc = Time/Volume"
+            },
+            {
+              "id": 152670,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152672,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152673,
+              "title": "If Stage Type is Shut-in w/ flowpulses, and Flow Rate > 0, set Stage Type to hyphen"
+            },
+            {
+              "id": 152675,
+              "title": "If Stage Type is changed from Shut-in or Shut-in w/flowpulses or Flowback to anything else then the value of Flow Rate is set to 1"
+            },
+            {
+              "id": 152676,
+              "title": "Add CO2 and N2 related data"
+            },
+            {
+              "id": 152677,
+              "title": "Update the value of common fields"
+            },
+            {
+              "id": 152678,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152679,
+              "title": "Verify step-level details"
+            },
+            {
+              "id": 152680,
+              "title": "Verify flow and concentration"
+            },
+            {
+              "id": 152682,
+              "title": "Verify bottom prop conc data"
+            },
+            {
+              "id": 152687,
+              "title": "Navigate and copy design schedule"
+            },
+            {
+              "id": 152688,
+              "title": "Verify persistent common fields"
+            },
+            {
+              "id": 152689,
+              "title": "Verification of Cell Data on Actual Page After Copied Data from Design When Prop Mode is Ramped"
+            },
+            {
+              "id": 152690,
+              "title": "Verification of Cell Data on Design Page After Saving When Prop Mode is Ramped and Changed to Staged"
+            },
+            {
+              "id": 152691,
+              "title": "Verify Data Persistence"
+            },
+            {
+              "id": 152692,
+              "title": "Copy Design Schedule to Actual Schedule"
+            },
+            {
+              "id": 152693,
+              "title": "Verification of Cell Data on Actual Page After Copied Data from Design When Prop Mode is Ramped"
+            },
+            {
+              "id": 152694,
+              "title": "Verify Pasting of Copied Excel Data into the Flow Rate Field Column"
+            },
+            {
+              "id": 152899,
+              "title": "User select the option from step type dropdown"
+            },
+            {
+              "id": 152901,
+              "title": "Verify user cannot edit Treatment Schedule in MQTT mode"
+            },
+            {
+              "id": 152902,
+              "title": "Verify editing controls are disabled in Dashboard Treatment Schedule view"
+            },
+            {
+              "id": 152905,
+              "title": "Verify no regression in navigation between modules"
+            },
+            {
+              "id": 152912,
+              "title": "Verify Step Prop is removed from Add Column dropdown"
+            },
+            {
+              "id": 152916,
+              "title": "Validate navigating modules retains stage"
+            }
+          ]
+        },
+        {
+          "priority": 18,
+          "name": "Actual Treatment Scheduled",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 19,
+          "name": "Treatment Totals",
+          "cases": 4,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 20,
+          "name": "Entry Friction",
+          "cases": 46,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 21,
+          "name": "Plots",
+          "cases": 278,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 22,
+          "name": "Plot in Word Report",
+          "cases": 1,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 23,
+          "name": "Material Usage",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 24,
+          "name": "Post Job Data",
+          "cases": 20,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 25,
+          "name": "User Defined Channel",
+          "cases": 41,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 26,
+          "name": "Version Control",
+          "cases": 80,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 27,
+          "name": "Dashboard",
+          "cases": 52,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 28,
+          "name": "User Management",
+          "cases": 150,
+          "status": "passed",
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": 51263,
+      "env": "stage",
+      "number": "LivePlus-Priority-stage-20261112.12",
+      "result": "partiallySucceeded",
+      "when": "2026-11-13T06:51:11.7173856Z",
+      "triggeredBy": "Akshay Sawant",
+      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51263",
+      "modulesPassed": 26,
+      "modulesFailed": 2,
+      "modulesRan": 28,
+      "moduleTotal": 28,
+      "casesPassed": 1672,
+      "casesFailed": 241,
+      "modules": [
+        {
+          "priority": 1,
+          "name": "Create Pad and Well",
+          "cases": 109,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 2,
+          "name": "Well and Treatment",
+          "cases": 99,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 3,
+          "name": "Job Comment",
+          "cases": 13,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 4,
+          "name": "Channel Input Model",
+          "cases": 100,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 5,
+          "name": "Drilled Hole",
+          "cases": 261,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 6,
+          "name": "Casing",
+          "cases": 16,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 7,
+          "name": "Surface Line and Tubing",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 8,
+          "name": "Perforation",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 9,
+          "name": "Directional Survey",
+          "cases": 9,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 10,
+          "name": "Path Summary",
+          "cases": 6,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 11,
+          "name": "Schematic 2D",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 12,
+          "name": "Heat Transfer Parameters",
+          "cases": 42,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 13,
+          "name": "Reservoir Parameters",
+          "cases": 48,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 14,
+          "name": "Add Material",
+          "cases": 215,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 15,
+          "name": "Add Chemical",
+          "cases": 21,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 16,
+          "name": "Edit Fluid",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 17,
+          "name": "Design Treatment Scheduled",
+          "cases": 230,
+          "status": "failed",
+          "detail": "design treatment schedule fill and persist",
+          "failedCases": [
+            {
+              "id": 127656,
+              "title": "Verify Treatment Schedule remains read-only on Dashboard"
+            },
+            {
+              "id": 127692,
+              "title": "Verify latest MQTT schedule displays on Dashboard"
+            },
+            {
+              "id": 127699,
+              "title": "Verify MQTT schedule updates after page refresh"
+            },
+            {
+              "id": 127701,
+              "title": "Verify MQTT schedule updates without requiring manual edits"
+            },
+            {
+              "id": 127703,
+              "title": "Verify non-MQTT wells still allow Treatment Schedule editing"
+            },
+            {
+              "id": 127818,
+              "title": "Verify Progress column values synchronize between Dashboard and Treatment Schedule"
+            },
+            {
+              "id": 127863,
+              "title": "Verify column order after logout/login"
+            },
+            {
+              "id": 127864,
+              "title": "Verify column order after browser refresh"
+            },
+            {
+              "id": 127903,
+              "title": "Verify Step column is editable"
+            },
+            {
+              "id": 127931,
+              "title": "Verify Actual Time values synchronize correctly between Dashboard and Treatment Schedule"
+            },
+            {
+              "id": 127947,
+              "title": "Verify dashboard synchronization with Treatment Schedule Actual tab"
+            },
+            {
+              "id": 130059,
+              "title": "Verify custom column save functionality works for remaining columns"
+            },
+            {
+              "id": 130064,
+              "title": "Verify dropdown sorting remains correct after Step Prop removal"
+            },
+            {
+              "id": 130066,
+              "title": "Verify search functionality works correctly after Step Prop removal"
+            },
+            {
+              "id": 130095,
+              "title": "Verify user cannot create Step Prop custom column through UI"
+            },
+            {
+              "id": 130110,
+              "title": "Verify Step Prop is unavailable for all user roles"
+            },
+            {
+              "id": 130112,
+              "title": "Verify Step Prop remains unavailable after logout/login"
+            },
+            {
+              "id": 131069,
+              "title": "Verify existing Treatment Schedule functionality after rename"
+            },
+            {
+              "id": 131126,
+              "title": "Verify existing Treatment Schedule functionality after rename"
+            },
+            {
+              "id": 131415,
+              "title": "Validate Treatment Schedule module is accessible"
+            },
+            {
+              "id": 133129,
+              "title": "Change in \"Calculate Volume/Time\" section"
+            },
+            {
+              "id": 133130,
+              "title": "Identify current step correctly"
+            },
+            {
+              "id": 133132,
+              "title": "Wrong step identification"
+            },
+            {
+              "id": 133134,
+              "title": "\"Get Schedule\" button disabled in non-ProPilot mode"
+            },
+            {
+              "id": 133135,
+              "title": "Try to edit past step."
+            },
+            {
+              "id": 133136,
+              "title": "Try to delete current step."
+            },
+            {
+              "id": 133137,
+              "title": "\"Back\" button navigation"
+            },
+            {
+              "id": 133139,
+              "title": "Change in \"Select Custom Column\" dropdown"
+            },
+            {
+              "id": 133141,
+              "title": "\"Get Schedule\" button visibility"
+            },
+            {
+              "id": 133142,
+              "title": "Editing enabled for future steps"
+            },
+            {
+              "id": 133143,
+              "title": "Editing disabled for past & current step"
+            },
+            {
+              "id": 133202,
+              "title": "Verify close functionality"
+            },
+            {
+              "id": 133207,
+              "title": "Verify side panel name"
+            },
+            {
+              "id": 133215,
+              "title": "Verify notification hyperlink is present"
+            },
+            {
+              "id": 133216,
+              "title": "Verify seismos data checkbox"
+            },
+            {
+              "id": 133217,
+              "title": "Verify redirection on hyperlink click"
+            },
+            {
+              "id": 133218,
+              "title": "Broken hyperlink"
+            },
+            {
+              "id": 133220,
+              "title": "Redirect to wrong screen"
+            },
+            {
+              "id": 133221,
+              "title": "Hyperlink missing in notification"
+            },
+            {
+              "id": 133224,
+              "title": "Verify single click navigation"
+            },
+            {
+              "id": 133681,
+              "title": "Step Prop column unit updated from klbs to lbs"
+            },
+            {
+              "id": 133822,
+              "title": "Verify Time (min) column position in Dashboard Treatment Schedule full-screen mode"
+            },
+            {
+              "id": 133823,
+              "title": "Verify column order remains correct while editing schedule inline"
+            },
+            {
+              "id": 133828,
+              "title": "Verify Time (min) column is last (rightmost) on Dashboard Treatment Schedule widget"
+            },
+            {
+              "id": 133829,
+              "title": "Verify column alignment remains correct on Dashboard Treatment Schedule widget"
+            },
+            {
+              "id": 133831,
+              "title": "Verify unchecking and re-checking Treatment Schedule in Plots panel preserves column order"
+            },
+            {
+              "id": 133833,
+              "title": "Verify Treatment Schedule widget appears on Dashboard when enabled from Plots panel"
+            },
+            {
+              "id": 133841,
+              "title": "Verify existing Time (min) Actual values unchanged after column reorder"
+            },
+            {
+              "id": 133843,
+              "title": "Verify existing Time (min) Step values unchanged after column reorder"
+            },
+            {
+              "id": 133844,
+              "title": "Verify schedule totals remain unchanged after column reorder"
+            },
+            {
+              "id": 133846,
+              "title": "Verify schedule calculations remain unchanged after column reorder"
+            },
+            {
+              "id": 133861,
+              "title": "Verify Time (min) column is last position on Dashboard Treatment Schedule table"
+            },
+            {
+              "id": 133864,
+              "title": "Verify units for Time (min) column remain unchanged after reorder"
+            },
+            {
+              "id": 133865,
+              "title": "Verify Time (min) header label text remains unchanged after reorder"
+            },
+            {
+              "id": 133866,
+              "title": "Verify Treatment Schedule changes are not shown on Dashboard when MQTT is OFF"
+            },
+            {
+              "id": 133869,
+              "title": "Verify column order persists after navigation within Inputs module"
+            },
+            {
+              "id": 133874,
+              "title": "Verify Treatment Schedule widget cannot be added to Dashboard when MQTT is OFF"
+            },
+            {
+              "id": 133875,
+              "title": "Verify column order persists after logout and login"
+            },
+            {
+              "id": 133876,
+              "title": "Verify column order persists after reopening well"
+            },
+            {
+              "id": 133877,
+              "title": "Verify Treatment Schedule option is NOT available in Dashboard Plots panel when MQTT is OFF"
+            },
+            {
+              "id": 134086,
+              "title": "Treatment schedule screen"
+            },
+            {
+              "id": 134151,
+              "title": "Edge Case: Verify behavior when custom columns are selected and then deselected"
+            },
+            {
+              "id": 134152,
+              "title": "Verify additional columns are added to the end of the table by default"
+            },
+            {
+              "id": 134153,
+              "title": "Verify multi-select functionality in “Select Custom Columns” drop-down"
+            },
+            {
+              "id": 134154,
+              "title": "Verify drop-down label change to “Select Custom Columns”"
+            },
+            {
+              "id": 134159,
+              "title": "Verify button label change to “Import From Design”"
+            },
+            {
+              "id": 134161,
+              "title": "Edge Case: Verify behavior when all custom columns are selected"
+            },
+            {
+              "id": 134163,
+              "title": "Edge Case: Verify behavior when importing design with no data"
+            },
+            {
+              "id": 134228,
+              "title": "Verify Step Alias column position"
+            },
+            {
+              "id": 134229,
+              "title": "Verify Stage Type set to -1 if Flow Rate > 0 for Shut-in"
+            },
+            {
+              "id": 134230,
+              "title": "Verify Stage Type column header renamed to Step Type"
+            },
+            {
+              "id": 134232,
+              "title": "Verify Design Schedule is read-only by default and Edit Schedule button is available"
+            },
+            {
+              "id": 134235,
+              "title": "Verify Flow Rate and Step Length set to 1 and Clean Vol set to 42 when changing from Shut-in, Shut-in w/flowpulses, or Flowback"
+            },
+            {
+              "id": 134236,
+              "title": "Verify Flow Rate and Clean Vol set to 0 for Shut-in or Shut-in w/flowpulses"
+            },
+            {
+              "id": 134239,
+              "title": "Verify Flow Rate and Clean Vol as negative values for Flowback"
+            },
+            {
+              "id": 134383,
+              "title": "Navigate to the Treatment schedule screen"
+            },
+            {
+              "id": 134385,
+              "title": "Validate the include Step Aliases checkbox"
+            },
+            {
+              "id": 134386,
+              "title": "Validate the UI of the Save and Next button"
+            },
+            {
+              "id": 134387,
+              "title": "Validate the button \"Import from design\""
+            },
+            {
+              "id": 134388,
+              "title": "Validate the Treatment details section"
+            },
+            {
+              "id": 134389,
+              "title": "Validate the \"Calculate Volumn/Time\"  section."
+            },
+            {
+              "id": 134401,
+              "title": "Validate the button \"Set Staging from Measured Data\""
+            },
+            {
+              "id": 134402,
+              "title": "Validate the UI of the table in the screen"
+            },
+            {
+              "id": 134403,
+              "title": "Validate the Treatment details section"
+            },
+            {
+              "id": 134404,
+              "title": "Validate the UI of the table in the screen"
+            },
+            {
+              "id": 134405,
+              "title": "Validate the \"Select Custom Columns\" dropdown"
+            },
+            {
+              "id": 134406,
+              "title": "Validate the UI and the placement of the Design treatment schedule tab."
+            },
+            {
+              "id": 134408,
+              "title": "Validate the button \"Set Schedule\""
+            },
+            {
+              "id": 134409,
+              "title": "Validate the UI of the Save and Next button"
+            },
+            {
+              "id": 134410,
+              "title": "Navigate to the Design Treatment schedule screen"
+            },
+            {
+              "id": 134411,
+              "title": "Validate the \"Calculate Volumn/Time\"  section."
+            },
+            {
+              "id": 134412,
+              "title": "Validate the include Step Aliases checkbox"
+            },
+            {
+              "id": 134650,
+              "title": "Validate the Treatment space table"
+            },
+            {
+              "id": 134651,
+              "title": "Validate the include storage Units and the controls under it."
+            },
+            {
+              "id": 134652,
+              "title": "Validate the Totals Split for section."
+            },
+            {
+              "id": 134655,
+              "title": "Validate hte navigation to the Treatment schedule - Totals"
+            },
+            {
+              "id": 134656,
+              "title": "Validate the functionality of Save button"
+            },
+            {
+              "id": 134657,
+              "title": "Validate the \"Totals For\" section."
+            },
+            {
+              "id": 134658,
+              "title": "Validate the functionality of Next button"
+            },
+            {
+              "id": 134659,
+              "title": "Validate \"Total Cost\" field"
+            },
+            {
+              "id": 134661,
+              "title": "Validate the heading of the section and it's UI"
+            },
+            {
+              "id": 134662,
+              "title": "Validate the UI of the \"Additional Items\" table in the screen"
+            },
+            {
+              "id": 134663,
+              "title": "Validate \"Additional Cost Sub Total\" field"
+            },
+            {
+              "id": 134742,
+              "title": "Navigate to the Treatment Schedule - Actual/Design"
+            },
+            {
+              "id": 134744,
+              "title": "Check on the Design Treatment Schedule, there is not Recalculate button"
+            },
+            {
+              "id": 134746,
+              "title": "Check on the Design Treatment Schedule, on SAVE button save and recalculate functionality should happen"
+            },
+            {
+              "id": 134755,
+              "title": "Navigate to the treatment schedule screen"
+            },
+            {
+              "id": 134974,
+              "title": "Conditions to check for Treatment Schedule"
+            },
+            {
+              "id": 136026,
+              "title": "Functional behaviour ofEstimate treating condition button ->Estimated Foam Pressure"
+            },
+            {
+              "id": 136029,
+              "title": "Functional behaviour of Estimate treating condition button ->Estimated Foam Temperature"
+            },
+            {
+              "id": 136030,
+              "title": "Functional behaviour of \"Recalculate\""
+            },
+            {
+              "id": 136031,
+              "title": "Functional behaviour of \"Edit Schedule\""
+            },
+            {
+              "id": 136032,
+              "title": "Functional behaviour of Import from design button"
+            },
+            {
+              "id": 136038,
+              "title": "Check and verify the \"Include Step Aliases\" checkbox"
+            },
+            {
+              "id": 136042,
+              "title": "Verify the behaviour of Treatment info\", dropdown"
+            },
+            {
+              "id": 136043,
+              "title": "Login with Fracpro live+ valid user"
+            },
+            {
+              "id": 136044,
+              "title": "Functional behaviour of Set staging from measured data button"
+            },
+            {
+              "id": 136047,
+              "title": "Go to the Treatment schedle menu option and click on it"
+            },
+            {
+              "id": 136048,
+              "title": "Functional behaviour of Recalculate button"
+            },
+            {
+              "id": 136055,
+              "title": "Cost Calculations"
+            },
+            {
+              "id": 136056,
+              "title": "Cumul Time Calculation"
+            },
+            {
+              "id": 136058,
+              "title": "Edit Schedule - Columns Editable"
+            },
+            {
+              "id": 136059,
+              "title": "Edit Schedule - Stop Editing"
+            },
+            {
+              "id": 136061,
+              "title": "Verify the behaviour of \"Prop mode\" dropdown"
+            },
+            {
+              "id": 136062,
+              "title": "Prop Mode Logic - Ramp 1"
+            },
+            {
+              "id": 136070,
+              "title": "Functional behaviour of \"Stop Schedule editing\""
+            },
+            {
+              "id": 136071,
+              "title": "Functional behaviour of \"Actual\" and \"Injection\""
+            },
+            {
+              "id": 136072,
+              "title": "Functional behavious of \"Include Wb Vol in Pad\" checkbox"
+            },
+            {
+              "id": 136073,
+              "title": "Functional behavious of \"Include Storage Units\" checkbox"
+            },
+            {
+              "id": 136074,
+              "title": "unit Cost ($)"
+            },
+            {
+              "id": 136075,
+              "title": "Functional behaviour of \"Totals for -  Design Schedule\""
+            },
+            {
+              "id": 136076,
+              "title": "Storage Quantity"
+            },
+            {
+              "id": 136077,
+              "title": "Storage Units"
+            },
+            {
+              "id": 136078,
+              "title": "Functional behaviour of \"Design Schedule\" and \"Injection\""
+            },
+            {
+              "id": 136080,
+              "title": "Functional behaviour of \"Totals split by - > Materials\""
+            },
+            {
+              "id": 136081,
+              "title": "Functional behaviour of \"Totals split by - > Injection\""
+            },
+            {
+              "id": 136082,
+              "title": "Include Cost - Unchecked"
+            },
+            {
+              "id": 136083,
+              "title": "Include Storage Units - Table"
+            },
+            {
+              "id": 136084,
+              "title": "Include Cost - Table"
+            },
+            {
+              "id": 136085,
+              "title": "Include Cost - Table"
+            },
+            {
+              "id": 136086,
+              "title": "Additional Items Table"
+            },
+            {
+              "id": 136087,
+              "title": "Include Storage Units - Checkbox"
+            },
+            {
+              "id": 136088,
+              "title": "Include Storage Units - Unchecked"
+            },
+            {
+              "id": 136089,
+              "title": "Include Wb Vol in Pad"
+            },
+            {
+              "id": 136090,
+              "title": "Treatment Specs - Pad Fraction"
+            },
+            {
+              "id": 136091,
+              "title": "Functional behaviour of \"Actual\" and \"Material\""
+            },
+            {
+              "id": 136092,
+              "title": "Functional behaviour of \"Totals for - Actual Data\""
+            },
+            {
+              "id": 136094,
+              "title": "Pumping Step Visibility"
+            },
+            {
+              "id": 136095,
+              "title": "Treatment Specs - Flush Vol"
+            },
+            {
+              "id": 136097,
+              "title": "Include Storage Units - Table"
+            },
+            {
+              "id": 136099,
+              "title": "Material Cost Subtotal"
+            },
+            {
+              "id": 136100,
+              "title": "Verify the column in \"Additional items\" table"
+            },
+            {
+              "id": 136101,
+              "title": "Cost ($)"
+            },
+            {
+              "id": 136102,
+              "title": "Functional behaviour of \"Design Schedule\" and \"Materials\""
+            },
+            {
+              "id": 136103,
+              "title": "verify the Pumping Step field"
+            },
+            {
+              "id": 136104,
+              "title": "Treatment Specs should have fields given in Expected column"
+            },
+            {
+              "id": 136105,
+              "title": "Functional behavious of \"Include Cost\" checkbox"
+            },
+            {
+              "id": 136106,
+              "title": "Treatment Specs - Pad Volume"
+            },
+            {
+              "id": 136107,
+              "title": "Discount (%)"
+            },
+            {
+              "id": 136108,
+              "title": "Include Cost - Checkbox"
+            },
+            {
+              "id": 136109,
+              "title": "Totals for - Actual Data"
+            },
+            {
+              "id": 136110,
+              "title": "Totals for - Design Schedule"
+            },
+            {
+              "id": 136111,
+              "title": "Totals split by - Materials"
+            },
+            {
+              "id": 136112,
+              "title": "Totals split by - Injection"
+            },
+            {
+              "id": 152606,
+              "title": "Verify Design Treatment Schedule Tab Navigation"
+            },
+            {
+              "id": 152609,
+              "title": "Verify Prop Mode default selected option"
+            },
+            {
+              "id": 152610,
+              "title": "Verify Prop Mode default selected option"
+            },
+            {
+              "id": 152611,
+              "title": "verify the treatment schedule header name when treatment type is no foam and prop mode is staged"
+            },
+            {
+              "id": 152613,
+              "title": "Verify Flow Rate value in first row should be Zero by default"
+            },
+            {
+              "id": 152614,
+              "title": "Verify Prop Conc value in first row should be Zero by default"
+            },
+            {
+              "id": 152615,
+              "title": "Verify Clean Vol value in first row should be Zero by default"
+            },
+            {
+              "id": 152616,
+              "title": "Verify Step Length value in first row should be Zero by default"
+            },
+            {
+              "id": 152618,
+              "title": "verify the treatment schedule header name when treatment type is N2 and prop mode is ramped"
+            },
+            {
+              "id": 152629,
+              "title": "verify the treatment schedule header name when treatment type is N2 and prop mode is staged"
+            },
+            {
+              "id": 152630,
+              "title": "verify the treatment schedule header name when treatment type is CO2 and prop mode is staged"
+            },
+            {
+              "id": 152631,
+              "title": "verify the treatment schedule header name when treatment type is CO2 and prop mode is ramped"
+            },
+            {
+              "id": 152632,
+              "title": "verify the treatment schedule header name when treatment type is N2 & CO2 and prop mode is ramped"
+            },
+            {
+              "id": 152633,
+              "title": "verify the treatment schedule header name when treatment type is N2 & CO2 and prop mode is staged"
+            },
+            {
+              "id": 152635,
+              "title": "Data Entry for First Row"
+            },
+            {
+              "id": 152638,
+              "title": "The user verifies the calculated value of Step Length for first row"
+            },
+            {
+              "id": 152639,
+              "title": "The user verifies Step Length field must be read-only and Clean Volume must be enabled"
+            },
+            {
+              "id": 152640,
+              "title": "The user verifies the calculated value of Clean Vol for first row"
+            },
+            {
+              "id": 152642,
+              "title": "The user verifies the calculated value of Clean Vol when Flow Rate is updated for first row"
+            },
+            {
+              "id": 152643,
+              "title": "The user verifies the calculated value of Step Length when Flow Rate is updated for first row"
+            },
+            {
+              "id": 152644,
+              "title": "The user verifies updated Step Length field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152645,
+              "title": "The user verifies updated Clean Vol field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152646,
+              "title": "The user verifies updated Step Length field value after updating the Prop Conc input field for first row"
+            },
+            {
+              "id": 152648,
+              "title": "The user verifies Flow Rate 1 matching Flow Rate value for first row"
+            },
+            {
+              "id": 152649,
+              "title": "The user verifies Prop Conc 1 matching Prop Conc 2 value for first row"
+            },
+            {
+              "id": 152650,
+              "title": "The user verifies updated Step Length field value when Flow Rate 1 and Flow Rate 2 are equal for first row"
+            },
+            {
+              "id": 152651,
+              "title": "The user verifies updated Step Length field value when Flow Rate 1 and Flow Rate 2 are different for first row"
+            },
+            {
+              "id": 152652,
+              "title": "The user verifies updated Step Length field value when Prop Conc 2 input field is updated"
+            },
+            {
+              "id": 152653,
+              "title": "The user verifies calculated Clean Vol when calculate is selected as volume from time"
+            },
+            {
+              "id": 152654,
+              "title": "The user verifies updated Step Length field value when Prop Conc 2 input field is updated"
+            },
+            {
+              "id": 152655,
+              "title": "Flow Rate Field Updates"
+            },
+            {
+              "id": 152656,
+              "title": "The user verifies updated Clean Vol field value when Flow Rate 1 input field is updated"
+            },
+            {
+              "id": 152657,
+              "title": "The user verifies updated Clean Vol field value when Flow Rate 2 input field is updated"
+            },
+            {
+              "id": 152658,
+              "title": "The user verifies updated Clean Vol field value when Prop Conc 1 input field is updated"
+            },
+            {
+              "id": 152659,
+              "title": "The user verifies updated Clean Vol field value when Prop Conc second input field is updated"
+            },
+            {
+              "id": 152660,
+              "title": "The user verifies updated Clean Vol field value when Step Length input field is updated"
+            },
+            {
+              "id": 152662,
+              "title": "verifies Flow Rate value must match the Flow Rate 1 value when Prop Mode Changes"
+            },
+            {
+              "id": 152663,
+              "title": "verifies Prop Conc value must match the Prop Conc 1 value when Prop Mode Changes"
+            },
+            {
+              "id": 152664,
+              "title": "The user verifies Flow Rate 1 and Flow Rate 2 field values must be same"
+            },
+            {
+              "id": 152665,
+              "title": "The user verifies Prop Conc 1 and Prop Conc 2 field values must be same"
+            },
+            {
+              "id": 152667,
+              "title": "Clean vol is calculated when treat type is zero and clean vol is zero and Calculate is Time from volume"
+            },
+            {
+              "id": 152668,
+              "title": "The user verifies Clean Volume Calculation when Treat Type = 0, Clean Vol = 0, and Calc = Time/Volume"
+            },
+            {
+              "id": 152670,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152672,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152673,
+              "title": "If Stage Type is Shut-in w/ flowpulses, and Flow Rate > 0, set Stage Type to hyphen"
+            },
+            {
+              "id": 152675,
+              "title": "If Stage Type is changed from Shut-in or Shut-in w/flowpulses or Flowback to anything else then the value of Flow Rate is set to 1"
+            },
+            {
+              "id": 152676,
+              "title": "Add CO2 and N2 related data"
+            },
+            {
+              "id": 152677,
+              "title": "Update the value of common fields"
+            },
+            {
+              "id": 152678,
+              "title": "The user verifies Step Length must be editable for second row but read-only for first row"
+            },
+            {
+              "id": 152679,
+              "title": "Verify step-level details"
+            },
+            {
+              "id": 152680,
+              "title": "Verify flow and concentration"
+            },
+            {
+              "id": 152682,
+              "title": "Verify bottom prop conc data"
+            },
+            {
+              "id": 152687,
+              "title": "Navigate and copy design schedule"
+            },
+            {
+              "id": 152688,
+              "title": "Verify persistent common fields"
+            },
+            {
+              "id": 152689,
+              "title": "Verification of Cell Data on Actual Page After Copied Data from Design When Prop Mode is Ramped"
+            },
+            {
+              "id": 152690,
+              "title": "Verification of Cell Data on Design Page After Saving When Prop Mode is Ramped and Changed to Staged"
+            },
+            {
+              "id": 152691,
+              "title": "Verify Data Persistence"
+            },
+            {
+              "id": 152692,
+              "title": "Copy Design Schedule to Actual Schedule"
+            },
+            {
+              "id": 152693,
+              "title": "Verification of Cell Data on Actual Page After Copied Data from Design When Prop Mode is Ramped"
+            },
+            {
+              "id": 152694,
+              "title": "Verify Pasting of Copied Excel Data into the Flow Rate Field Column"
+            },
+            {
+              "id": 152899,
+              "title": "User select the option from step type dropdown"
+            },
+            {
+              "id": 152901,
+              "title": "Verify user cannot edit Treatment Schedule in MQTT mode"
+            },
+            {
+              "id": 152902,
+              "title": "Verify editing controls are disabled in Dashboard Treatment Schedule view"
+            },
+            {
+              "id": 152905,
+              "title": "Verify no regression in navigation between modules"
+            },
+            {
+              "id": 152912,
+              "title": "Verify Step Prop is removed from Add Column dropdown"
+            },
+            {
+              "id": 152916,
+              "title": "Validate navigating modules retains stage"
+            }
+          ]
+        },
+        {
+          "priority": 18,
+          "name": "Actual Treatment Scheduled",
+          "cases": 11,
+          "status": "failed",
+          "detail": "Actual schedule",
+          "failedCases": [
+            {
+              "id": 127658,
+              "title": "Verify user cannot edit Actual Treatment Schedule through browser inspect/dev tools"
+            },
+            {
+              "id": 133838,
+              "title": "Verify complete column order in Actual Treatment Schedule matches design"
+            },
+            {
+              "id": 133845,
+              "title": "Verify column order with fully populated Actual Treatment Schedule"
+            },
+            {
+              "id": 133848,
+              "title": "Verify Dashboard column order is consistent with Actual Treatment Schedule"
+            },
+            {
+              "id": 133856,
+              "title": "Verify Dashboard Treatment Schedule column order matches Actual Treatment Schedule page"
+            },
+            {
+              "id": 134157,
+              "title": "Verify confirmation message on importing design to actual schedule"
+            },
+            {
+              "id": 134384,
+              "title": "Validate the UI and the placement of the Actual treatment schedule tab."
+            },
+            {
+              "id": 134743,
+              "title": "Check on the Actual Treatment Schedule, there is not Recalculate button"
+            },
+            {
+              "id": 134745,
+              "title": "Check on the Actual Treatment Schedule, on SAVE button save and recalculate functionality should happen"
+            },
+            {
+              "id": 136053,
+              "title": "Copy Design to Actual Schedule"
+            },
+            {
+              "id": 136068,
+              "title": "Verify the behaviour of table in Actual treatment schedule"
+            }
+          ]
+        },
+        {
+          "priority": 19,
+          "name": "Treatment Totals",
+          "cases": 4,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 20,
+          "name": "Entry Friction",
+          "cases": 46,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 21,
+          "name": "Plots",
+          "cases": 278,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 22,
+          "name": "Plot in Word Report",
+          "cases": 1,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 23,
+          "name": "Material Usage",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 24,
+          "name": "Post Job Data",
+          "cases": 20,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 25,
+          "name": "User Defined Channel",
+          "cases": 41,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 26,
+          "name": "Version Control",
+          "cases": 80,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 27,
+          "name": "Dashboard",
+          "cases": 52,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 28,
+          "name": "User Management",
+          "cases": 150,
+          "status": "passed",
+          "detail": ""
+        }
+      ]
+    },
     {
       "id": 51131,
       "env": "stage",
@@ -4469,1740 +6955,6 @@
       "when": "2026-11-12T09:34:25.9527992Z",
       "triggeredBy": "Akshay Sawant",
       "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51079",
-      "modulesPassed": 25,
-      "modulesFailed": 3,
-      "modulesRan": 28,
-      "moduleTotal": 28,
-      "casesPassed": 1751,
-      "casesFailed": 162,
-      "modules": [
-        {
-          "priority": 1,
-          "name": "Create Pad and Well",
-          "cases": 109,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 2,
-          "name": "Well and Treatment",
-          "cases": 99,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 3,
-          "name": "Job Comment",
-          "cases": 13,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 4,
-          "name": "Channel Input Model",
-          "cases": 100,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 5,
-          "name": "Drilled Hole",
-          "cases": 261,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 6,
-          "name": "Casing",
-          "cases": 16,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 7,
-          "name": "Surface Line and Tubing",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 8,
-          "name": "Perforation",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 9,
-          "name": "Directional Survey",
-          "cases": 9,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 10,
-          "name": "Path Summary",
-          "cases": 6,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 11,
-          "name": "Schematic 2D",
-          "cases": 11,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 12,
-          "name": "Heat Transfer Parameters",
-          "cases": 42,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 13,
-          "name": "Reservoir Parameters",
-          "cases": 48,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 14,
-          "name": "Add Material",
-          "cases": 215,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 15,
-          "name": "Add Chemical",
-          "cases": 21,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 16,
-          "name": "Edit Fluid",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 17,
-          "name": "Design Treatment Scheduled",
-          "cases": 230,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 18,
-          "name": "Actual Treatment Scheduled",
-          "cases": 11,
-          "status": "failed",
-          "detail": "Actual schedule",
-          "failedCases": [
-            {
-              "id": 127658,
-              "title": "Verify user cannot edit Actual Treatment Schedule through browser inspect/dev tools"
-            },
-            {
-              "id": 133838,
-              "title": "Verify complete column order in Actual Treatment Schedule matches design"
-            },
-            {
-              "id": 133845,
-              "title": "Verify column order with fully populated Actual Treatment Schedule"
-            },
-            {
-              "id": 133848,
-              "title": "Verify Dashboard column order is consistent with Actual Treatment Schedule"
-            },
-            {
-              "id": 133856,
-              "title": "Verify Dashboard Treatment Schedule column order matches Actual Treatment Schedule page"
-            },
-            {
-              "id": 134157,
-              "title": "Verify confirmation message on importing design to actual schedule"
-            },
-            {
-              "id": 134384,
-              "title": "Validate the UI and the placement of the Actual treatment schedule tab."
-            },
-            {
-              "id": 134743,
-              "title": "Check on the Actual Treatment Schedule, there is not Recalculate button"
-            },
-            {
-              "id": 134745,
-              "title": "Check on the Actual Treatment Schedule, on SAVE button save and recalculate functionality should happen"
-            },
-            {
-              "id": 136053,
-              "title": "Copy Design to Actual Schedule"
-            },
-            {
-              "id": 136068,
-              "title": "Verify the behaviour of table in Actual treatment schedule"
-            }
-          ]
-        },
-        {
-          "priority": 19,
-          "name": "Treatment Totals",
-          "cases": 4,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 20,
-          "name": "Entry Friction",
-          "cases": 46,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 21,
-          "name": "Plots",
-          "cases": 278,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 22,
-          "name": "Plot in Word Report",
-          "cases": 1,
-          "status": "failed",
-          "detail": "Word report",
-          "failedCases": [
-            {
-              "id": 134672,
-              "title": "Validate the default selected state of the \"Plots in word reports\""
-            }
-          ]
-        },
-        {
-          "priority": 23,
-          "name": "Material Usage",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 24,
-          "name": "Post Job Data",
-          "cases": 20,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 25,
-          "name": "User Defined Channel",
-          "cases": 41,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 26,
-          "name": "Version Control",
-          "cases": 80,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 27,
-          "name": "Dashboard",
-          "cases": 52,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 28,
-          "name": "User Management",
-          "cases": 150,
-          "status": "failed",
-          "detail": "Operator",
-          "failedCases": [
-            {
-              "id": 129152,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129158,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129160,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129162,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129166,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129168,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129170,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129171,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129172,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129173,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129174,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129175,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129176,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129178,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129180,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129182,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129183,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129184,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129185,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129187,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129188,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129189,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129190,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129191,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129193,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129194,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129195,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129196,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129197,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129198,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129199,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129200,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129203,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129204,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129205,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129206,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129209,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129211,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129213,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129216,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129219,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129221,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129226,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129228,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129237,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129239,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129372,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 129380,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 129392,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 129403,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 129406,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 129414,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 129423,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 129431,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 129435,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 129479,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 129501,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 129516,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 129540,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 129549,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 129551,
-              "title": "Edit user updates additional software"
-            },
-            {
-              "id": 129562,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 129655,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 129662,
-              "title": "Edit user retains Live+"
-            },
-            {
-              "id": 129715,
-              "title": "Unauthorized user accessing admin panel"
-            },
-            {
-              "id": 130766,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 130770,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 130784,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 130799,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 130817,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 130828,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 130841,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132742,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 132743,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 132745,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 132746,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 132747,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 132748,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 132749,
-              "title": "Verify delete user functionality"
-            },
-            {
-              "id": 132750,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 132753,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 132754,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 132756,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 132757,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 132758,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 132763,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 132764,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 132765,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132768,
-              "title": "Verify delete confirmation popup"
-            },
-            {
-              "id": 132771,
-              "title": "Verify validation on empty mandatory fields"
-            },
-            {
-              "id": 132772,
-              "title": "Verify back navigation behavior"
-            },
-            {
-              "id": 132782,
-              "title": "Verify delete of edited user"
-            },
-            {
-              "id": 132784,
-              "title": "Verify switching companies updates list"
-            },
-            {
-              "id": 132787,
-              "title": "Verify cancel delete action"
-            },
-            {
-              "id": 132788,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 132790,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 132793,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 132795,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 132800,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 132814,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 132819,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 132820,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 132831,
-              "title": "Verify role-based caching does not leak data"
-            },
-            {
-              "id": 132836,
-              "title": "Verify Admin can Delete User"
-            },
-            {
-              "id": 132839,
-              "title": "Verify bulk actions (Delete) for Company Admin"
-            },
-            {
-              "id": 132840,
-              "title": "Verify restricted password reset (Company Admin)"
-            },
-            {
-              "id": 132844,
-              "title": "Verify password reset capability (Company Admin)"
-            },
-            {
-              "id": 132848,
-              "title": "Verify search performance for Carbo Admin"
-            },
-            {
-              "id": 132850,
-              "title": "Verify role assignment (Company Admin)"
-            },
-            {
-              "id": 132851,
-              "title": "Verify User Search (Carbo Admin)"
-            },
-            {
-              "id": 132852,
-              "title": "Verify view permissions for \"Regular User\""
-            },
-            {
-              "id": 132853,
-              "title": "Verify error message for unauthorized company access"
-            },
-            {
-              "id": 132854,
-              "title": "Verify Carbo Admin can view deactivated Company users"
-            },
-            {
-              "id": 132857,
-              "title": "Verify Delete permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132859,
-              "title": "Verify User list filtering by Company (Company Admin)"
-            },
-            {
-              "id": 132861,
-              "title": "Verify Edit permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132863,
-              "title": "Verify bulk actions (Delete) for Carbo Admin"
-            },
-            {
-              "id": 132866,
-              "title": "Verify Navigation menu isolation"
-            },
-            {
-              "id": 132869,
-              "title": "Verify Carbo Admin filter functionality"
-            },
-            {
-              "id": 132870,
-              "title": "Verify Edit permission for Company Admin"
-            },
-            {
-              "id": 132871,
-              "title": "Verify User Search (Company Admin)"
-            },
-            {
-              "id": 132875,
-              "title": "Verify Delete permission for Company Admin"
-            },
-            {
-              "id": 132878,
-              "title": "Verify search by Company ID in global search"
-            },
-            {
-              "id": 132879,
-              "title": "Verify \"My Profile\" vs \"User Management\""
-            },
-            {
-              "id": 132881,
-              "title": "Verify sorting by Company Name"
-            },
-            {
-              "id": 132882,
-              "title": "Verify User count per company (Carbo Admin view)"
-            },
-            {
-              "id": 132884,
-              "title": "Verify \"Add New User\" button state"
-            },
-            {
-              "id": 133964,
-              "title": "Verify \"Service Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133972,
-              "title": "Verify \"Operator Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133994,
-              "title": "Verification of the \"Company name\" dropdown as as service company user"
-            },
-            {
-              "id": 133996,
-              "title": "Verification of the \"Company name\" dropdown as as Operator company user"
-            },
-            {
-              "id": 133998,
-              "title": "Verify the \"Service Company Name\" dropdown, if as Operator company user"
-            },
-            {
-              "id": 133999,
-              "title": "Verify the \"Service Company Name\" dropdown, if as service company user"
-            },
-            {
-              "id": 134817,
-              "title": "Validate all the required field should be available on the page"
-            },
-            {
-              "id": 134818,
-              "title": "Navigate to the Myprofile page"
-            },
-            {
-              "id": 134993,
-              "title": "Validate by updating the editable field"
-            },
-            {
-              "id": 134994,
-              "title": "Validate the side menu bar should work as work for other screens"
-            },
-            {
-              "id": 134995,
-              "title": "Validateh email feild, should be read only"
-            },
-            {
-              "id": 134996,
-              "title": "Navigate to the My profile page"
-            },
-            {
-              "id": 135075,
-              "title": "Close warning popup without action"
-            },
-            {
-              "id": 135079,
-              "title": "Select \"No\" on the warning message"
-            },
-            {
-              "id": 135080,
-              "title": "Button not visible due to missing permission"
-            },
-            {
-              "id": 135081,
-              "title": "Click on \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135082,
-              "title": "Select \"Yes\" on the warning message"
-            },
-            {
-              "id": 135083,
-              "title": "Verify warning message content"
-            },
-            {
-              "id": 135084,
-              "title": "Verify visibility of \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135152,
-              "title": "Verify PNG download works"
-            },
-            {
-              "id": 140903,
-              "title": "Verify login with Operator role"
-            },
-            {
-              "id": 152831,
-              "title": "Verify Service Company Representative"
-            },
-            {
-              "id": 152832,
-              "title": "Verify Service Company Name"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 51064,
-      "env": "stage",
-      "number": "LivePlus-Priority-stage-20261112.1",
-      "result": "partiallySucceeded",
-      "when": "2026-11-12T08:10:22.2234508Z",
-      "triggeredBy": "Akshay Sawant",
-      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51064",
-      "modulesPassed": 25,
-      "modulesFailed": 3,
-      "modulesRan": 28,
-      "moduleTotal": 28,
-      "casesPassed": 1751,
-      "casesFailed": 162,
-      "modules": [
-        {
-          "priority": 1,
-          "name": "Create Pad and Well",
-          "cases": 109,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 2,
-          "name": "Well and Treatment",
-          "cases": 99,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 3,
-          "name": "Job Comment",
-          "cases": 13,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 4,
-          "name": "Channel Input Model",
-          "cases": 100,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 5,
-          "name": "Drilled Hole",
-          "cases": 261,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 6,
-          "name": "Casing",
-          "cases": 16,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 7,
-          "name": "Surface Line and Tubing",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 8,
-          "name": "Perforation",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 9,
-          "name": "Directional Survey",
-          "cases": 9,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 10,
-          "name": "Path Summary",
-          "cases": 6,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 11,
-          "name": "Schematic 2D",
-          "cases": 11,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 12,
-          "name": "Heat Transfer Parameters",
-          "cases": 42,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 13,
-          "name": "Reservoir Parameters",
-          "cases": 48,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 14,
-          "name": "Add Material",
-          "cases": 215,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 15,
-          "name": "Add Chemical",
-          "cases": 21,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 16,
-          "name": "Edit Fluid",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 17,
-          "name": "Design Treatment Scheduled",
-          "cases": 230,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 18,
-          "name": "Actual Treatment Scheduled",
-          "cases": 11,
-          "status": "failed",
-          "detail": "Actual schedule",
-          "failedCases": [
-            {
-              "id": 127658,
-              "title": "Verify user cannot edit Actual Treatment Schedule through browser inspect/dev tools"
-            },
-            {
-              "id": 133838,
-              "title": "Verify complete column order in Actual Treatment Schedule matches design"
-            },
-            {
-              "id": 133845,
-              "title": "Verify column order with fully populated Actual Treatment Schedule"
-            },
-            {
-              "id": 133848,
-              "title": "Verify Dashboard column order is consistent with Actual Treatment Schedule"
-            },
-            {
-              "id": 133856,
-              "title": "Verify Dashboard Treatment Schedule column order matches Actual Treatment Schedule page"
-            },
-            {
-              "id": 134157,
-              "title": "Verify confirmation message on importing design to actual schedule"
-            },
-            {
-              "id": 134384,
-              "title": "Validate the UI and the placement of the Actual treatment schedule tab."
-            },
-            {
-              "id": 134743,
-              "title": "Check on the Actual Treatment Schedule, there is not Recalculate button"
-            },
-            {
-              "id": 134745,
-              "title": "Check on the Actual Treatment Schedule, on SAVE button save and recalculate functionality should happen"
-            },
-            {
-              "id": 136053,
-              "title": "Copy Design to Actual Schedule"
-            },
-            {
-              "id": 136068,
-              "title": "Verify the behaviour of table in Actual treatment schedule"
-            }
-          ]
-        },
-        {
-          "priority": 19,
-          "name": "Treatment Totals",
-          "cases": 4,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 20,
-          "name": "Entry Friction",
-          "cases": 46,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 21,
-          "name": "Plots",
-          "cases": 278,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 22,
-          "name": "Plot in Word Report",
-          "cases": 1,
-          "status": "failed",
-          "detail": "Word report",
-          "failedCases": [
-            {
-              "id": 134672,
-              "title": "Validate the default selected state of the \"Plots in word reports\""
-            }
-          ]
-        },
-        {
-          "priority": 23,
-          "name": "Material Usage",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 24,
-          "name": "Post Job Data",
-          "cases": 20,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 25,
-          "name": "User Defined Channel",
-          "cases": 41,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 26,
-          "name": "Version Control",
-          "cases": 80,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 27,
-          "name": "Dashboard",
-          "cases": 52,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 28,
-          "name": "User Management",
-          "cases": 150,
-          "status": "failed",
-          "detail": "Profile, Operator",
-          "failedCases": [
-            {
-              "id": 129152,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129158,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129160,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129162,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129166,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129168,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129170,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129171,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129172,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129173,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129174,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129175,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129176,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129178,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129180,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129182,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129183,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129184,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129185,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129187,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129188,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129189,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129190,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129191,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129193,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129194,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129195,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129196,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129197,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129198,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129199,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129200,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129203,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129204,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129205,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129206,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129209,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129211,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129213,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129216,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129219,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129221,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129226,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129228,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129237,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129239,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129372,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 129380,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 129392,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 129403,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 129406,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 129414,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 129423,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 129431,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 129435,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 129479,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 129501,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 129516,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 129540,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 129549,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 129551,
-              "title": "Edit user updates additional software"
-            },
-            {
-              "id": 129562,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 129655,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 129662,
-              "title": "Edit user retains Live+"
-            },
-            {
-              "id": 129715,
-              "title": "Unauthorized user accessing admin panel"
-            },
-            {
-              "id": 130766,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 130770,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 130784,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 130799,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 130817,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 130828,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 130841,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132742,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 132743,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 132745,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 132746,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 132747,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 132748,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 132749,
-              "title": "Verify delete user functionality"
-            },
-            {
-              "id": 132750,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 132753,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 132754,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 132756,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 132757,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 132758,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 132763,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 132764,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 132765,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132768,
-              "title": "Verify delete confirmation popup"
-            },
-            {
-              "id": 132771,
-              "title": "Verify validation on empty mandatory fields"
-            },
-            {
-              "id": 132772,
-              "title": "Verify back navigation behavior"
-            },
-            {
-              "id": 132782,
-              "title": "Verify delete of edited user"
-            },
-            {
-              "id": 132784,
-              "title": "Verify switching companies updates list"
-            },
-            {
-              "id": 132787,
-              "title": "Verify cancel delete action"
-            },
-            {
-              "id": 132788,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 132790,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 132793,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 132795,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 132800,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 132814,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 132819,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 132820,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 132831,
-              "title": "Verify role-based caching does not leak data"
-            },
-            {
-              "id": 132836,
-              "title": "Verify Admin can Delete User"
-            },
-            {
-              "id": 132839,
-              "title": "Verify bulk actions (Delete) for Company Admin"
-            },
-            {
-              "id": 132840,
-              "title": "Verify restricted password reset (Company Admin)"
-            },
-            {
-              "id": 132844,
-              "title": "Verify password reset capability (Company Admin)"
-            },
-            {
-              "id": 132848,
-              "title": "Verify search performance for Carbo Admin"
-            },
-            {
-              "id": 132850,
-              "title": "Verify role assignment (Company Admin)"
-            },
-            {
-              "id": 132851,
-              "title": "Verify User Search (Carbo Admin)"
-            },
-            {
-              "id": 132852,
-              "title": "Verify view permissions for \"Regular User\""
-            },
-            {
-              "id": 132853,
-              "title": "Verify error message for unauthorized company access"
-            },
-            {
-              "id": 132854,
-              "title": "Verify Carbo Admin can view deactivated Company users"
-            },
-            {
-              "id": 132857,
-              "title": "Verify Delete permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132859,
-              "title": "Verify User list filtering by Company (Company Admin)"
-            },
-            {
-              "id": 132861,
-              "title": "Verify Edit permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132863,
-              "title": "Verify bulk actions (Delete) for Carbo Admin"
-            },
-            {
-              "id": 132866,
-              "title": "Verify Navigation menu isolation"
-            },
-            {
-              "id": 132869,
-              "title": "Verify Carbo Admin filter functionality"
-            },
-            {
-              "id": 132870,
-              "title": "Verify Edit permission for Company Admin"
-            },
-            {
-              "id": 132871,
-              "title": "Verify User Search (Company Admin)"
-            },
-            {
-              "id": 132875,
-              "title": "Verify Delete permission for Company Admin"
-            },
-            {
-              "id": 132878,
-              "title": "Verify search by Company ID in global search"
-            },
-            {
-              "id": 132879,
-              "title": "Verify \"My Profile\" vs \"User Management\""
-            },
-            {
-              "id": 132881,
-              "title": "Verify sorting by Company Name"
-            },
-            {
-              "id": 132882,
-              "title": "Verify User count per company (Carbo Admin view)"
-            },
-            {
-              "id": 132884,
-              "title": "Verify \"Add New User\" button state"
-            },
-            {
-              "id": 133964,
-              "title": "Verify \"Service Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133972,
-              "title": "Verify \"Operator Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133994,
-              "title": "Verification of the \"Company name\" dropdown as as service company user"
-            },
-            {
-              "id": 133996,
-              "title": "Verification of the \"Company name\" dropdown as as Operator company user"
-            },
-            {
-              "id": 133998,
-              "title": "Verify the \"Service Company Name\" dropdown, if as Operator company user"
-            },
-            {
-              "id": 133999,
-              "title": "Verify the \"Service Company Name\" dropdown, if as service company user"
-            },
-            {
-              "id": 134817,
-              "title": "Validate all the required field should be available on the page"
-            },
-            {
-              "id": 134818,
-              "title": "Navigate to the Myprofile page"
-            },
-            {
-              "id": 134993,
-              "title": "Validate by updating the editable field"
-            },
-            {
-              "id": 134994,
-              "title": "Validate the side menu bar should work as work for other screens"
-            },
-            {
-              "id": 134995,
-              "title": "Validateh email feild, should be read only"
-            },
-            {
-              "id": 134996,
-              "title": "Navigate to the My profile page"
-            },
-            {
-              "id": 135075,
-              "title": "Close warning popup without action"
-            },
-            {
-              "id": 135079,
-              "title": "Select \"No\" on the warning message"
-            },
-            {
-              "id": 135080,
-              "title": "Button not visible due to missing permission"
-            },
-            {
-              "id": 135081,
-              "title": "Click on \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135082,
-              "title": "Select \"Yes\" on the warning message"
-            },
-            {
-              "id": 135083,
-              "title": "Verify warning message content"
-            },
-            {
-              "id": 135084,
-              "title": "Verify visibility of \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135152,
-              "title": "Verify PNG download works"
-            },
-            {
-              "id": 140903,
-              "title": "Verify login with Operator role"
-            },
-            {
-              "id": 152831,
-              "title": "Verify Service Company Representative"
-            },
-            {
-              "id": 152832,
-              "title": "Verify Service Company Name"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 51017,
-      "env": "stage",
-      "number": "LivePlus-Priority-stage-20261111.16",
-      "result": "partiallySucceeded",
-      "when": "2026-11-12T03:25:28.5163474Z",
-      "triggeredBy": "pulkit.singhal walkingtree.tech",
-      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51017",
       "modulesPassed": 25,
       "modulesFailed": 3,
       "modulesRan": 28,
