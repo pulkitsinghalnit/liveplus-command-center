@@ -1,11 +1,622 @@
 {
-  "generatedAt": "2026-11-13T12:51:48.699Z",
+  "generatedAt": "2026-11-13T20:17:56.562Z",
   "inventory": 2204,
   "mapped": 1913,
   "outside": 291,
   "filter": "AI Playwright Automation = Automated, excluding Minifrac and Depro",
   "pipelineUrl": "https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288",
   "runs": [
+    {
+      "id": 51460,
+      "env": "stage",
+      "number": "LivePlus-Priority-stage-20261113.2",
+      "result": "partiallySucceeded",
+      "when": "2026-11-13T19:00:28.2304532Z",
+      "triggeredBy": "Akshay Sawant",
+      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51460",
+      "modulesPassed": 27,
+      "modulesFailed": 1,
+      "modulesRan": 28,
+      "moduleTotal": 28,
+      "casesPassed": 1814,
+      "casesFailed": 99,
+      "modules": [
+        {
+          "priority": 1,
+          "name": "Create Pad and Well",
+          "cases": 109,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 2,
+          "name": "Well and Treatment",
+          "cases": 99,
+          "status": "failed",
+          "detail": "Well & Treatment general, location, and ad",
+          "failedCases": [
+            {
+              "id": 130158,
+              "title": "Verify user can open Well Treatment screen successfully"
+            },
+            {
+              "id": 130160,
+              "title": "Verify default values are loaded in Well Treatment fields"
+            },
+            {
+              "id": 130164,
+              "title": "Verify Save functionality in Well Treatment"
+            },
+            {
+              "id": 130166,
+              "title": "Verify validation for mandatory fields in Well Treatment"
+            },
+            {
+              "id": 130168,
+              "title": "Verify numeric field validation in Well Treatment"
+            },
+            {
+              "id": 130228,
+              "title": "Verify UI alignment in Well Treatment screen"
+            },
+            {
+              "id": 133153,
+              "title": "Enter only numeric Van ID"
+            },
+            {
+              "id": 133154,
+              "title": "Enter valid alphanumeric Van ID"
+            },
+            {
+              "id": 133155,
+              "title": "Save Van ID with valid string"
+            },
+            {
+              "id": 133156,
+              "title": "Enter only alphabetic Van ID"
+            },
+            {
+              "id": 133157,
+              "title": "Verify that the “Van ID” field is displayed"
+            },
+            {
+              "id": 133158,
+              "title": "Verify that \"Include Seismos Data\" checkbox is visible when \"Seismos\" is ON in well and treatment screen"
+            },
+            {
+              "id": 133973,
+              "title": "Verify navigation to the Well & Treatment Screen after clicking \"Add Wellbore\""
+            },
+            {
+              "id": 133992,
+              "title": "Verify Well and Treatment screen should have 2 tabs ( General information and Comments)"
+            },
+            {
+              "id": 133993,
+              "title": "View of the \"well and treatment\" screen"
+            },
+            {
+              "id": 134003,
+              "title": "Verify the Field name field"
+            },
+            {
+              "id": 134005,
+              "title": "Verify that the dropdown values should not be auto select."
+            },
+            {
+              "id": 134226,
+              "title": "The time zone for the mismatch values -  Validate If the Time Zone in Task bar does not match with the time zone in  user requirement then Central Standard Time zone is displayed"
+            },
+            {
+              "id": 134227,
+              "title": "Verify the Time in well and Treatment screen - Additional Information displays the same local time zone as selected Task bar settings of the local machine"
+            },
+            {
+              "id": 134264,
+              "title": "Verify the RHS screen header"
+            },
+            {
+              "id": 134266,
+              "title": "Verify the access of Well and Treatment screen by clicking on it in side menu"
+            },
+            {
+              "id": 134268,
+              "title": "Verify the navigation to \"Well & Treatment - General Information\""
+            },
+            {
+              "id": 134270,
+              "title": "Update comments -Verify the \"date and time\" should be separated by  COMMA in the Date and Time column"
+            },
+            {
+              "id": 134271,
+              "title": "Add new comments -Verify the \"date and time\" should be separated by  COMMA in the Date and Time column"
+            },
+            {
+              "id": 134272,
+              "title": "Verify the navigation upto \"Well & Treatment - Comments\""
+            },
+            {
+              "id": 134273,
+              "title": "Verify the scenario to select the whole records by clicking on the respective sequence numbe"
+            },
+            {
+              "id": 134274,
+              "title": "Verify the scenario to select the whole column by clicking on the respective column name"
+            },
+            {
+              "id": 134518,
+              "title": "GO to the any screen of the application (where we have NEXT button) and make changes and click on NO,DISCARD button"
+            },
+            {
+              "id": 134519,
+              "title": "GO to the any screen and make changes and click on \"TOP X\" button"
+            },
+            {
+              "id": 134520,
+              "title": "GO to the any screen and make changes and click on YES,SAVE button"
+            },
+            {
+              "id": 134600,
+              "title": "Collapse a section when it has some unsaved changes and then verify"
+            },
+            {
+              "id": 134602,
+              "title": "Expand any collapsed section and verify the behavior of other sections"
+            },
+            {
+              "id": 134605,
+              "title": "Verify the \"Location\" section data consistency"
+            },
+            {
+              "id": 134608,
+              "title": "Verify the location section heading as \"Location\""
+            },
+            {
+              "id": 134609,
+              "title": "Verify the \"Additional Info\" section data consistency"
+            },
+            {
+              "id": 134973,
+              "title": "Conditions to check with user lands on Well & Treatment Tab"
+            },
+            {
+              "id": 134975,
+              "title": "Conditions to check with user perform SAVE on Well & Treatment Tab"
+            },
+            {
+              "id": 134991,
+              "title": "Conditions to check with user perform SAVE on Well & Treatment Tab"
+            },
+            {
+              "id": 135625,
+              "title": "Non Fracpro live+ user should NOT be able to login"
+            },
+            {
+              "id": 135626,
+              "title": "valid user login into the application and reach upto the 'Well and Treatment' screen"
+            },
+            {
+              "id": 135627,
+              "title": "Verify to create a new well"
+            },
+            {
+              "id": 135628,
+              "title": "Enter the username with different case variations."
+            },
+            {
+              "id": 135629,
+              "title": "Login with Fracpro live+ valid user"
+            },
+            {
+              "id": 135630,
+              "title": "Verify KB (ft):"
+            },
+            {
+              "id": 135631,
+              "title": "Verify the place holder in the all the empty fields"
+            },
+            {
+              "id": 135633,
+              "title": "Verify Country dropdown"
+            },
+            {
+              "id": 135634,
+              "title": "Verify this section will not have any mandatory fields"
+            },
+            {
+              "id": 135635,
+              "title": "Verify Latitude field"
+            },
+            {
+              "id": 135636,
+              "title": "Verify the Location section in General information tab"
+            },
+            {
+              "id": 135638,
+              "title": "Verify 'locationMode' with value 1 (NS/EW)"
+            },
+            {
+              "id": 135643,
+              "title": "Validate default values for Location fields"
+            },
+            {
+              "id": 135645,
+              "title": "Validate elevation field input format"
+            },
+            {
+              "id": 135646,
+              "title": "Verify KB (Kelly Bushing) field input format"
+            },
+            {
+              "id": 135653,
+              "title": "Verify Longitude field"
+            },
+            {
+              "id": 135656,
+              "title": "Verify State dropdown"
+            },
+            {
+              "id": 135657,
+              "title": "Verify Elevation(ft): field"
+            },
+            {
+              "id": 135658,
+              "title": "Validate data persistence for Location fields"
+            },
+            {
+              "id": 135659,
+              "title": "Submit invalid data in multiple fields"
+            },
+            {
+              "id": 135660,
+              "title": "Enter valid string in Well Tag"
+            },
+            {
+              "id": 135661,
+              "title": "Edit Time Zone with suggestions"
+            },
+            {
+              "id": 135662,
+              "title": "Load form with default values"
+            },
+            {
+              "id": 135663,
+              "title": "Select Time Zone from suggestions"
+            },
+            {
+              "id": 135664,
+              "title": "Enter valid string in Landing Point"
+            },
+            {
+              "id": 135665,
+              "title": "Enter numbers only in Well Tag"
+            },
+            {
+              "id": 135666,
+              "title": "Enter special characters only in Landing Point"
+            },
+            {
+              "id": 135667,
+              "title": "Enter valid string in Fleet"
+            },
+            {
+              "id": 135668,
+              "title": "Partially fill form"
+            },
+            {
+              "id": 135669,
+              "title": "Submit form without filling any fields"
+            },
+            {
+              "id": 135670,
+              "title": "Enter valid string in Zipper Group"
+            },
+            {
+              "id": 135671,
+              "title": "Select time zone and then remove it"
+            },
+            {
+              "id": 135672,
+              "title": "Type invalid text in Time Zone"
+            },
+            {
+              "id": 135673,
+              "title": "Enter valid string in AFE"
+            },
+            {
+              "id": 135674,
+              "title": "Enter 500+ characters in Fleet field"
+            },
+            {
+              "id": 135675,
+              "title": "Validation on Company field"
+            },
+            {
+              "id": 135677,
+              "title": "Functionality of the SAVE button"
+            },
+            {
+              "id": 135678,
+              "title": "Functionality of the NEXT button"
+            },
+            {
+              "id": 135679,
+              "title": "Visibility of the SAVE and NEXT button."
+            },
+            {
+              "id": 136227,
+              "title": "Functionality of the NEXT button without saving"
+            },
+            {
+              "id": 136229,
+              "title": "Functionaltiy of the SAVE button"
+            },
+            {
+              "id": 136230,
+              "title": "Verify the # column"
+            },
+            {
+              "id": 136232,
+              "title": "Verify the Comments column"
+            },
+            {
+              "id": 136233,
+              "title": "Functionality of the NEXT button with saving"
+            },
+            {
+              "id": 136234,
+              "title": "Verify the Job time column"
+            },
+            {
+              "id": 136235,
+              "title": "This field is non-mandatory field"
+            },
+            {
+              "id": 136238,
+              "title": "Verify the Time column"
+            },
+            {
+              "id": 136239,
+              "title": "Verify the Date column"
+            },
+            {
+              "id": 152810,
+              "title": "Verify page title"
+            },
+            {
+              "id": 152816,
+              "title": "Action Required Popup on Next Button"
+            },
+            {
+              "id": 152817,
+              "title": "Action Required Popup on General Info Tab"
+            },
+            {
+              "id": 152818,
+              "title": "Sidebar Navigation Action Required"
+            },
+            {
+              "id": 152819,
+              "title": "Profile Icon Navigation With Unsaved Data"
+            },
+            {
+              "id": 152822,
+              "title": "Verify user lands on Well and Treatment screen"
+            },
+            {
+              "id": 152823,
+              "title": "Verify General Information tab is active"
+            },
+            {
+              "id": 152880,
+              "title": "Action Required Popup on Next Button"
+            },
+            {
+              "id": 152881,
+              "title": "Action Required Popup on General Info Tab"
+            },
+            {
+              "id": 152882,
+              "title": "Profile Icon Navigation With Unsaved Data"
+            },
+            {
+              "id": 152903,
+              "title": "Verify Save or Update actions are disabled in MQTT mode"
+            },
+            {
+              "id": 152904,
+              "title": "Verify editing is enabled for non-MQTT wells"
+            },
+            {
+              "id": 152906,
+              "title": "Verify end-to-end workflow with MQTT mode enabled"
+            }
+          ]
+        },
+        {
+          "priority": 3,
+          "name": "Job Comment",
+          "cases": 13,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 4,
+          "name": "Channel Input Model",
+          "cases": 100,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 5,
+          "name": "Drilled Hole",
+          "cases": 261,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 6,
+          "name": "Casing",
+          "cases": 16,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 7,
+          "name": "Surface Line and Tubing",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 8,
+          "name": "Perforation",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 9,
+          "name": "Directional Survey",
+          "cases": 9,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 10,
+          "name": "Path Summary",
+          "cases": 6,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 11,
+          "name": "Schematic 2D",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 12,
+          "name": "Heat Transfer Parameters",
+          "cases": 42,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 13,
+          "name": "Reservoir Parameters",
+          "cases": 48,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 14,
+          "name": "Add Material",
+          "cases": 215,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 15,
+          "name": "Add Chemical",
+          "cases": 21,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 16,
+          "name": "Edit Fluid",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 17,
+          "name": "Design Treatment Scheduled",
+          "cases": 230,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 18,
+          "name": "Actual Treatment Scheduled",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 19,
+          "name": "Treatment Totals",
+          "cases": 4,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 20,
+          "name": "Entry Friction",
+          "cases": 46,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 21,
+          "name": "Plots",
+          "cases": 278,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 22,
+          "name": "Plot in Word Report",
+          "cases": 1,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 23,
+          "name": "Material Usage",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 24,
+          "name": "Post Job Data",
+          "cases": 20,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 25,
+          "name": "User Defined Channel",
+          "cases": 41,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 26,
+          "name": "Version Control",
+          "cases": 80,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 27,
+          "name": "Dashboard",
+          "cases": 52,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 28,
+          "name": "User Management",
+          "cases": 150,
+          "status": "passed",
+          "detail": ""
+        }
+      ]
+    },
     {
       "id": 51331,
       "env": "stage",
@@ -6342,873 +6953,6 @@
           "cases": 150,
           "status": "failed",
           "detail": "Profile, Operator",
-          "failedCases": [
-            {
-              "id": 129152,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129158,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129160,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129162,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129166,
-              "title": "Reject non-PNG file type – GIF upload"
-            },
-            {
-              "id": 129168,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129170,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129171,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129172,
-              "title": "Upload logo with uppercase .PNG extension"
-            },
-            {
-              "id": 129173,
-              "title": "Verify Upload Logo button is visible on Add Company screen"
-            },
-            {
-              "id": 129174,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129175,
-              "title": "Save new company with uploaded logo"
-            },
-            {
-              "id": 129176,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129178,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129180,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129182,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129183,
-              "title": "Save company without uploading logo (optional logo behavior)"
-            },
-            {
-              "id": 129184,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129185,
-              "title": "Upload oversized PNG beyond allowed limit"
-            },
-            {
-              "id": 129187,
-              "title": "Upload PNG with very long filename"
-            },
-            {
-              "id": 129188,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129189,
-              "title": "Reject non-PNG file type – JPG upload on Add Company"
-            },
-            {
-              "id": 129190,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129191,
-              "title": "Verify Upload Logo button is visible on Edit Company screen"
-            },
-            {
-              "id": 129193,
-              "title": "Upload corrupted PNG file"
-            },
-            {
-              "id": 129194,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129195,
-              "title": "Upload PNG with special characters in filename"
-            },
-            {
-              "id": 129196,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129197,
-              "title": "Upload empty/zero-byte PNG file"
-            },
-            {
-              "id": 129198,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129199,
-              "title": "Upload valid PNG logo while creating a new company"
-            },
-            {
-              "id": 129200,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129203,
-              "title": "Replace existing logo on Edit Company screen"
-            },
-            {
-              "id": 129204,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129205,
-              "title": "Verify logo persistence across new browser session"
-            },
-            {
-              "id": 129206,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129209,
-              "title": "Reopen newly created company and verify logo persistence"
-            },
-            {
-              "id": 129211,
-              "title": "Verify logo persistence after logout and login"
-            },
-            {
-              "id": 129213,
-              "title": "Verify logo preview updates immediately on replacement before save"
-            },
-            {
-              "id": 129216,
-              "title": "Verify logo preview after upload on Add Company screen"
-            },
-            {
-              "id": 129219,
-              "title": "Verify saved logo remains unchanged if user navigates away without replacing"
-            },
-            {
-              "id": 129221,
-              "title": "Upload large-size PNG near maximum allowed limit"
-            },
-            {
-              "id": 129226,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129228,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129237,
-              "title": "Reject non-PNG file type – PDF upload"
-            },
-            {
-              "id": 129239,
-              "title": "Reject non-PNG file type – SVG upload on Edit Company"
-            },
-            {
-              "id": 129372,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 129380,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 129392,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 129403,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 129406,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 129414,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 129423,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 129431,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 129435,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 129479,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 129501,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 129516,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 129540,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 129549,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 129551,
-              "title": "Edit user updates additional software"
-            },
-            {
-              "id": 129562,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 129655,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 129662,
-              "title": "Edit user retains Live+"
-            },
-            {
-              "id": 129715,
-              "title": "Unauthorized user accessing admin panel"
-            },
-            {
-              "id": 130766,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 130770,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 130784,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 130799,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 130817,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 130828,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 130841,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132742,
-              "title": "Verify role-based access control"
-            },
-            {
-              "id": 132743,
-              "title": "Verify keyboard navigation"
-            },
-            {
-              "id": 132745,
-              "title": "Verify max length validation"
-            },
-            {
-              "id": 132746,
-              "title": "Verify filtering users by company"
-            },
-            {
-              "id": 132747,
-              "title": "Verify company dropdown/search is available"
-            },
-            {
-              "id": 132748,
-              "title": "Verify Add User popup opens"
-            },
-            {
-              "id": 132749,
-              "title": "Verify delete user functionality"
-            },
-            {
-              "id": 132750,
-              "title": "Verify edit with invalid data"
-            },
-            {
-              "id": 132753,
-              "title": "Verify navigation to Users screen"
-            },
-            {
-              "id": 132754,
-              "title": "Verify Add User button visibility"
-            },
-            {
-              "id": 132756,
-              "title": "Verify search within user list"
-            },
-            {
-              "id": 132757,
-              "title": "Verify edit reflects in list"
-            },
-            {
-              "id": 132758,
-              "title": "Verify edit validation for mandatory fields"
-            },
-            {
-              "id": 132763,
-              "title": "Verify clicking outside triggers validation"
-            },
-            {
-              "id": 132764,
-              "title": "Verify edit user functionality"
-            },
-            {
-              "id": 132765,
-              "title": "Verify cancel button in popup"
-            },
-            {
-              "id": 132768,
-              "title": "Verify delete confirmation popup"
-            },
-            {
-              "id": 132771,
-              "title": "Verify validation on empty mandatory fields"
-            },
-            {
-              "id": 132772,
-              "title": "Verify back navigation behavior"
-            },
-            {
-              "id": 132782,
-              "title": "Verify delete of edited user"
-            },
-            {
-              "id": 132784,
-              "title": "Verify switching companies updates list"
-            },
-            {
-              "id": 132787,
-              "title": "Verify cancel delete action"
-            },
-            {
-              "id": 132788,
-              "title": "Verify role-specific menu consistency"
-            },
-            {
-              "id": 132790,
-              "title": "Verify Edit User blocked for non-Admin"
-            },
-            {
-              "id": 132793,
-              "title": "Verify Add User blocked for non-Admin"
-            },
-            {
-              "id": 132795,
-              "title": "Verify Delete User blocked for non-Admin"
-            },
-            {
-              "id": 132800,
-              "title": "Verify multiple roles switching"
-            },
-            {
-              "id": 132814,
-              "title": "Verify unauthorized access error message"
-            },
-            {
-              "id": 132819,
-              "title": "Verify Admin can Edit User"
-            },
-            {
-              "id": 132820,
-              "title": "Verify multiple tabs role consistency"
-            },
-            {
-              "id": 132831,
-              "title": "Verify role-based caching does not leak data"
-            },
-            {
-              "id": 132836,
-              "title": "Verify Admin can Delete User"
-            },
-            {
-              "id": 132839,
-              "title": "Verify bulk actions (Delete) for Company Admin"
-            },
-            {
-              "id": 132840,
-              "title": "Verify restricted password reset (Company Admin)"
-            },
-            {
-              "id": 132844,
-              "title": "Verify password reset capability (Company Admin)"
-            },
-            {
-              "id": 132848,
-              "title": "Verify search performance for Carbo Admin"
-            },
-            {
-              "id": 132850,
-              "title": "Verify role assignment (Company Admin)"
-            },
-            {
-              "id": 132851,
-              "title": "Verify User Search (Carbo Admin)"
-            },
-            {
-              "id": 132852,
-              "title": "Verify view permissions for \"Regular User\""
-            },
-            {
-              "id": 132853,
-              "title": "Verify error message for unauthorized company access"
-            },
-            {
-              "id": 132854,
-              "title": "Verify Carbo Admin can view deactivated Company users"
-            },
-            {
-              "id": 132857,
-              "title": "Verify Delete permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132859,
-              "title": "Verify User list filtering by Company (Company Admin)"
-            },
-            {
-              "id": 132861,
-              "title": "Verify Edit permission across companies (Carbo Admin)"
-            },
-            {
-              "id": 132863,
-              "title": "Verify bulk actions (Delete) for Carbo Admin"
-            },
-            {
-              "id": 132866,
-              "title": "Verify Navigation menu isolation"
-            },
-            {
-              "id": 132869,
-              "title": "Verify Carbo Admin filter functionality"
-            },
-            {
-              "id": 132870,
-              "title": "Verify Edit permission for Company Admin"
-            },
-            {
-              "id": 132871,
-              "title": "Verify User Search (Company Admin)"
-            },
-            {
-              "id": 132875,
-              "title": "Verify Delete permission for Company Admin"
-            },
-            {
-              "id": 132878,
-              "title": "Verify search by Company ID in global search"
-            },
-            {
-              "id": 132879,
-              "title": "Verify \"My Profile\" vs \"User Management\""
-            },
-            {
-              "id": 132881,
-              "title": "Verify sorting by Company Name"
-            },
-            {
-              "id": 132882,
-              "title": "Verify User count per company (Carbo Admin view)"
-            },
-            {
-              "id": 132884,
-              "title": "Verify \"Add New User\" button state"
-            },
-            {
-              "id": 133964,
-              "title": "Verify \"Service Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133972,
-              "title": "Verify \"Operator Company\" field behavior for carbo type users"
-            },
-            {
-              "id": 133994,
-              "title": "Verification of the \"Company name\" dropdown as as service company user"
-            },
-            {
-              "id": 133996,
-              "title": "Verification of the \"Company name\" dropdown as as Operator company user"
-            },
-            {
-              "id": 133998,
-              "title": "Verify the \"Service Company Name\" dropdown, if as Operator company user"
-            },
-            {
-              "id": 133999,
-              "title": "Verify the \"Service Company Name\" dropdown, if as service company user"
-            },
-            {
-              "id": 134817,
-              "title": "Validate all the required field should be available on the page"
-            },
-            {
-              "id": 134818,
-              "title": "Navigate to the Myprofile page"
-            },
-            {
-              "id": 134993,
-              "title": "Validate by updating the editable field"
-            },
-            {
-              "id": 134994,
-              "title": "Validate the side menu bar should work as work for other screens"
-            },
-            {
-              "id": 134995,
-              "title": "Validateh email feild, should be read only"
-            },
-            {
-              "id": 134996,
-              "title": "Navigate to the My profile page"
-            },
-            {
-              "id": 135075,
-              "title": "Close warning popup without action"
-            },
-            {
-              "id": 135079,
-              "title": "Select \"No\" on the warning message"
-            },
-            {
-              "id": 135080,
-              "title": "Button not visible due to missing permission"
-            },
-            {
-              "id": 135081,
-              "title": "Click on \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135082,
-              "title": "Select \"Yes\" on the warning message"
-            },
-            {
-              "id": 135083,
-              "title": "Verify warning message content"
-            },
-            {
-              "id": 135084,
-              "title": "Verify visibility of \"Reset Compute Resources\" button"
-            },
-            {
-              "id": 135152,
-              "title": "Verify PNG download works"
-            },
-            {
-              "id": 140903,
-              "title": "Verify login with Operator role"
-            },
-            {
-              "id": 152831,
-              "title": "Verify Service Company Representative"
-            },
-            {
-              "id": 152832,
-              "title": "Verify Service Company Name"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 51079,
-      "env": "stage",
-      "number": "LivePlus-Priority-stage-20261112.2",
-      "result": "partiallySucceeded",
-      "when": "2026-11-12T09:34:25.9527992Z",
-      "triggeredBy": "Akshay Sawant",
-      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51079",
-      "modulesPassed": 25,
-      "modulesFailed": 3,
-      "modulesRan": 28,
-      "moduleTotal": 28,
-      "casesPassed": 1751,
-      "casesFailed": 162,
-      "modules": [
-        {
-          "priority": 1,
-          "name": "Create Pad and Well",
-          "cases": 109,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 2,
-          "name": "Well and Treatment",
-          "cases": 99,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 3,
-          "name": "Job Comment",
-          "cases": 13,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 4,
-          "name": "Channel Input Model",
-          "cases": 100,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 5,
-          "name": "Drilled Hole",
-          "cases": 261,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 6,
-          "name": "Casing",
-          "cases": 16,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 7,
-          "name": "Surface Line and Tubing",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 8,
-          "name": "Perforation",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 9,
-          "name": "Directional Survey",
-          "cases": 9,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 10,
-          "name": "Path Summary",
-          "cases": 6,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 11,
-          "name": "Schematic 2D",
-          "cases": 11,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 12,
-          "name": "Heat Transfer Parameters",
-          "cases": 42,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 13,
-          "name": "Reservoir Parameters",
-          "cases": 48,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 14,
-          "name": "Add Material",
-          "cases": 215,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 15,
-          "name": "Add Chemical",
-          "cases": 21,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 16,
-          "name": "Edit Fluid",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 17,
-          "name": "Design Treatment Scheduled",
-          "cases": 230,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 18,
-          "name": "Actual Treatment Scheduled",
-          "cases": 11,
-          "status": "failed",
-          "detail": "Actual schedule",
-          "failedCases": [
-            {
-              "id": 127658,
-              "title": "Verify user cannot edit Actual Treatment Schedule through browser inspect/dev tools"
-            },
-            {
-              "id": 133838,
-              "title": "Verify complete column order in Actual Treatment Schedule matches design"
-            },
-            {
-              "id": 133845,
-              "title": "Verify column order with fully populated Actual Treatment Schedule"
-            },
-            {
-              "id": 133848,
-              "title": "Verify Dashboard column order is consistent with Actual Treatment Schedule"
-            },
-            {
-              "id": 133856,
-              "title": "Verify Dashboard Treatment Schedule column order matches Actual Treatment Schedule page"
-            },
-            {
-              "id": 134157,
-              "title": "Verify confirmation message on importing design to actual schedule"
-            },
-            {
-              "id": 134384,
-              "title": "Validate the UI and the placement of the Actual treatment schedule tab."
-            },
-            {
-              "id": 134743,
-              "title": "Check on the Actual Treatment Schedule, there is not Recalculate button"
-            },
-            {
-              "id": 134745,
-              "title": "Check on the Actual Treatment Schedule, on SAVE button save and recalculate functionality should happen"
-            },
-            {
-              "id": 136053,
-              "title": "Copy Design to Actual Schedule"
-            },
-            {
-              "id": 136068,
-              "title": "Verify the behaviour of table in Actual treatment schedule"
-            }
-          ]
-        },
-        {
-          "priority": 19,
-          "name": "Treatment Totals",
-          "cases": 4,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 20,
-          "name": "Entry Friction",
-          "cases": 46,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 21,
-          "name": "Plots",
-          "cases": 278,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 22,
-          "name": "Plot in Word Report",
-          "cases": 1,
-          "status": "failed",
-          "detail": "Word report",
-          "failedCases": [
-            {
-              "id": 134672,
-              "title": "Validate the default selected state of the \"Plots in word reports\""
-            }
-          ]
-        },
-        {
-          "priority": 23,
-          "name": "Material Usage",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 24,
-          "name": "Post Job Data",
-          "cases": 20,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 25,
-          "name": "User Defined Channel",
-          "cases": 41,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 26,
-          "name": "Version Control",
-          "cases": 80,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 27,
-          "name": "Dashboard",
-          "cases": 52,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 28,
-          "name": "User Management",
-          "cases": 150,
-          "status": "failed",
-          "detail": "Operator",
           "failedCases": [
             {
               "id": 129152,
