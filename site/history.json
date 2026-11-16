@@ -1,11 +1,671 @@
 {
-  "generatedAt": "2026-11-16T08:17:04.558Z",
+  "generatedAt": "2026-11-16T18:45:45.328Z",
   "inventory": 2204,
   "mapped": 1913,
   "outside": 291,
   "filter": "AI Playwright Automation = Automated, excluding Minifrac and Depro",
   "pipelineUrl": "https://dev.azure.com/Stratagen/Live%20Plus/_build?definitionId=288",
   "runs": [
+    {
+      "id": 51672,
+      "env": "stage",
+      "number": "LivePlus-Priority-stage-20261116.4",
+      "result": "partiallySucceeded",
+      "when": "2026-11-16T09:28:59.9591788Z",
+      "triggeredBy": "Akshay Sawant",
+      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51672",
+      "modulesPassed": 28,
+      "modulesFailed": 0,
+      "modulesRan": 28,
+      "moduleTotal": 28,
+      "casesPassed": 1913,
+      "casesFailed": 0,
+      "modules": [
+        {
+          "priority": 1,
+          "name": "Create Pad and Well",
+          "cases": 109,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 2,
+          "name": "Well and Treatment",
+          "cases": 99,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 3,
+          "name": "Job Comment",
+          "cases": 13,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 4,
+          "name": "Channel Input Model",
+          "cases": 100,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 5,
+          "name": "Drilled Hole",
+          "cases": 261,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 6,
+          "name": "Casing",
+          "cases": 16,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 7,
+          "name": "Surface Line and Tubing",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 8,
+          "name": "Perforation",
+          "cases": 15,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 9,
+          "name": "Directional Survey",
+          "cases": 9,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 10,
+          "name": "Path Summary",
+          "cases": 6,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 11,
+          "name": "Schematic 2D",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 12,
+          "name": "Heat Transfer Parameters",
+          "cases": 42,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 13,
+          "name": "Reservoir Parameters",
+          "cases": 48,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 14,
+          "name": "Add Material",
+          "cases": 215,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 15,
+          "name": "Add Chemical",
+          "cases": 21,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 16,
+          "name": "Edit Fluid",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 17,
+          "name": "Design Treatment Scheduled",
+          "cases": 230,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 18,
+          "name": "Actual Treatment Scheduled",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 19,
+          "name": "Treatment Totals",
+          "cases": 4,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 20,
+          "name": "Entry Friction",
+          "cases": 46,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 21,
+          "name": "Plots",
+          "cases": 278,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 22,
+          "name": "Plot in Word Report",
+          "cases": 1,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 23,
+          "name": "Material Usage",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 24,
+          "name": "Post Job Data",
+          "cases": 20,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 25,
+          "name": "User Defined Channel",
+          "cases": 41,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 26,
+          "name": "Version Control",
+          "cases": 80,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 27,
+          "name": "Dashboard",
+          "cases": 52,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 28,
+          "name": "User Management",
+          "cases": 150,
+          "status": "passed",
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": 51641,
+      "env": "stage",
+      "number": "LivePlus-Priority-stage-20261116.3",
+      "result": "partiallySucceeded",
+      "when": "2026-11-16T08:17:04.5740155Z",
+      "triggeredBy": "Akshay Sawant",
+      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51641",
+      "modulesPassed": 23,
+      "modulesFailed": 5,
+      "modulesRan": 28,
+      "moduleTotal": 28,
+      "casesPassed": 1857,
+      "casesFailed": 56,
+      "modules": [
+        {
+          "priority": 1,
+          "name": "Create Pad and Well",
+          "cases": 109,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 2,
+          "name": "Well and Treatment",
+          "cases": 99,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 3,
+          "name": "Job Comment",
+          "cases": 13,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 4,
+          "name": "Channel Input Model",
+          "cases": 100,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 5,
+          "name": "Drilled Hole",
+          "cases": 261,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 6,
+          "name": "Casing",
+          "cases": 16,
+          "status": "failed",
+          "detail": "casing wellbore configuration ",
+          "failedCases": [
+            {
+              "id": 134129,
+              "title": "Verify manual override for OD, Weight, and ID on Casing tab"
+            },
+            {
+              "id": 134136,
+              "title": "Verify Top MD is always less than or equal to Bot MD on Casing tab"
+            },
+            {
+              "id": 134141,
+              "title": "Edge Case: Verify manual override for OD, Weight, and ID with extreme values on Casing tab"
+            },
+            {
+              "id": 134147,
+              "title": "Verify Top MD is always less than or equal to Bot MD on Casing tab"
+            },
+            {
+              "id": 134295,
+              "title": "Validate the navigation to the \"Wellbore Configuration - Casing\"."
+            },
+            {
+              "id": 135736,
+              "title": "verify that Casing dropdown must have below values in drop down 1.Cemented casing - Default 2.Free casing 3.Liner"
+            },
+            {
+              "id": 135737,
+              "title": "verify that Casing must be dropdown"
+            },
+            {
+              "id": 135738,
+              "title": "check Casing value must be Cemented Casing by autoselect when we are adding value in Top MD"
+            },
+            {
+              "id": 135741,
+              "title": "verify that in top card Casing option must be there to choose a table"
+            },
+            {
+              "id": 135744,
+              "title": "Verify that The Casing table must contain the following columns  1. # 2.Length (ft) 3.Top MD (ft) 4.Bot MD (ft) 5.Casing 6.OD (in) 7.Weight (lb/ft) 8.ID (in)  9.Grade"
+            },
+            {
+              "id": 135755,
+              "title": "check Casing value must be Cemented Casing by autoselect when we are adding value in length"
+            },
+            {
+              "id": 135759,
+              "title": "check Casing value must be Cemented Casing by autoselect when we are adding value in BOT MD"
+            },
+            {
+              "id": 136333,
+              "title": "Wrong casing selected"
+            },
+            {
+              "id": 136334,
+              "title": "Outermost casing selected automatically"
+            },
+            {
+              "id": 136336,
+              "title": "No casing present at level"
+            },
+            {
+              "id": 136621,
+              "title": "Display Casing properties"
+            }
+          ]
+        },
+        {
+          "priority": 7,
+          "name": "Surface Line and Tubing",
+          "cases": 15,
+          "status": "failed",
+          "detail": "surface line tubing wellbore configuration",
+          "failedCases": [
+            {
+              "id": 130199,
+              "title": "Verify user can add tubing in wellbore"
+            },
+            {
+              "id": 134126,
+              "title": "Verify Top MD is always less than or equal to Bot MD on Surface Line/Tubing tab"
+            },
+            {
+              "id": 134137,
+              "title": "Verify Top MD is always less than or equal to Bot MD on Surface Line/Tubing tab"
+            },
+            {
+              "id": 134142,
+              "title": "Edge Case: Verify manual override for OD, Weight, and ID with zero values on Surface Line/Tubing tab"
+            },
+            {
+              "id": 134148,
+              "title": "Verify manual override for OD, Weight, and ID on Surface Line/Tubing tab"
+            },
+            {
+              "id": 134221,
+              "title": "Verify Surf Line/Tubing value for Top MD < 0"
+            },
+            {
+              "id": 134305,
+              "title": "Validate the navigation to the \"Wellbore Configuration - Surface Line/Tubing\""
+            },
+            {
+              "id": 135775,
+              "title": "verify that surface line tubing must have following value in the dropdown  Tubing - Default Drill Pipe Packer Surface line Surface CTU Cross Over"
+            },
+            {
+              "id": 135776,
+              "title": "verify that surface line tubing must be dropdown"
+            },
+            {
+              "id": 135780,
+              "title": "The \"surface line/tubing\" table must contain the following columns  1. # 2.Length (ft) 3.Top MD (ft) 4.Bot MD (ft) 5.Surface Line Tubing 6.OD (in) 7.Weight (lb/ft) 8.ID (in) 9.Grade"
+            },
+            {
+              "id": 135781,
+              "title": "verify that in top card Surface Line Tubing option must be there to choose a table"
+            },
+            {
+              "id": 135804,
+              "title": "Veify the columns name  \"Surface Line Tubing\""
+            },
+            {
+              "id": 136329,
+              "title": "Multiple tubing rows with mixed types"
+            },
+            {
+              "id": 141136,
+              "title": "Verify validation prevents saving “Cross Over” as tubing type"
+            },
+            {
+              "id": 141160,
+              "title": "Verify packer rendering updates when tubing OD changes"
+            }
+          ]
+        },
+        {
+          "priority": 8,
+          "name": "Perforation",
+          "cases": 15,
+          "status": "failed",
+          "detail": "perforation intervals wellbore configurati",
+          "failedCases": [
+            {
+              "id": 134127,
+              "title": "Verify no decimal places for Number of Clusters and Number of Perforations"
+            },
+            {
+              "id": 134140,
+              "title": "Verify cluster column header renamed on Perforation Intervals tab"
+            },
+            {
+              "id": 134145,
+              "title": "Verify cluster column header renamed on Perforation Intervals tab"
+            },
+            {
+              "id": 134149,
+              "title": "Edge Case: Verify no decimal places for Number of Clusters and Number of Perforations with large values"
+            },
+            {
+              "id": 136341,
+              "title": "Perforations not perpendicular"
+            },
+            {
+              "id": 136342,
+              "title": "Non-continuous perforations supported"
+            },
+            {
+              "id": 136343,
+              "title": "Show perforations from outermost casing"
+            },
+            {
+              "id": 136345,
+              "title": "Perforations are always perpendicular to casing"
+            },
+            {
+              "id": 136346,
+              "title": "Show all stage perforations"
+            },
+            {
+              "id": 136646,
+              "title": "Validate the any particular stage perforations are not part of any other stages. Perforations are stage specific"
+            },
+            {
+              "id": 136649,
+              "title": "Validate a view with all the perforations of all the stages in a single view along with the currently selected stage"
+            },
+            {
+              "id": 136650,
+              "title": "Fill Data in Wellbore configuration (perf intervals) tab & observe label on Trajectory"
+            },
+            {
+              "id": 137303,
+              "title": "Enter zero perforations"
+            },
+            {
+              "id": 137323,
+              "title": "Perforation Data Table"
+            },
+            {
+              "id": 137338,
+              "title": "Try selecting an invalid option in \"Perforation Pressure Drop Model\""
+            }
+          ]
+        },
+        {
+          "priority": 9,
+          "name": "Directional Survey",
+          "cases": 9,
+          "status": "failed",
+          "detail": "directional survey wellbore configuration ",
+          "failedCases": [
+            {
+              "id": 134093,
+              "title": "Directional Survey screen"
+            },
+            {
+              "id": 134113,
+              "title": "Verify Recalculate behaviour in all tabs minus \"directional survey\""
+            },
+            {
+              "id": 134123,
+              "title": "Verify columns on Directional Survey tab"
+            },
+            {
+              "id": 134128,
+              "title": "Edge Case: Verify columns on Directional Survey tab with missing data"
+            },
+            {
+              "id": 134144,
+              "title": "Verify columns on Directional Survey tab"
+            },
+            {
+              "id": 134342,
+              "title": "Validate the navigation to the \"Directional Survey."
+            },
+            {
+              "id": 134740,
+              "title": "Navigate to the directional survey screen"
+            },
+            {
+              "id": 136356,
+              "title": "Validate the navigation to the Directional Survey screen"
+            },
+            {
+              "id": 152895,
+              "title": "Go to Directional survey tab"
+            }
+          ]
+        },
+        {
+          "priority": 10,
+          "name": "Path Summary",
+          "cases": 6,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 11,
+          "name": "Schematic 2D",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 12,
+          "name": "Heat Transfer Parameters",
+          "cases": 42,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 13,
+          "name": "Reservoir Parameters",
+          "cases": 48,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 14,
+          "name": "Add Material",
+          "cases": 215,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 15,
+          "name": "Add Chemical",
+          "cases": 21,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 16,
+          "name": "Edit Fluid",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 17,
+          "name": "Design Treatment Scheduled",
+          "cases": 230,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 18,
+          "name": "Actual Treatment Scheduled",
+          "cases": 11,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 19,
+          "name": "Treatment Totals",
+          "cases": 4,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 20,
+          "name": "Entry Friction",
+          "cases": 46,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 21,
+          "name": "Plots",
+          "cases": 278,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 22,
+          "name": "Plot in Word Report",
+          "cases": 1,
+          "status": "failed",
+          "detail": "Word report",
+          "failedCases": [
+            {
+              "id": 134672,
+              "title": "Validate the default selected state of the \"Plots in word reports\""
+            }
+          ]
+        },
+        {
+          "priority": 23,
+          "name": "Material Usage",
+          "cases": 10,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 24,
+          "name": "Post Job Data",
+          "cases": 20,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 25,
+          "name": "User Defined Channel",
+          "cases": 41,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 26,
+          "name": "Version Control",
+          "cases": 80,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 27,
+          "name": "Dashboard",
+          "cases": 52,
+          "status": "passed",
+          "detail": ""
+        },
+        {
+          "priority": 28,
+          "name": "User Management",
+          "cases": 150,
+          "status": "passed",
+          "detail": ""
+        }
+      ]
+    },
     {
       "id": 51634,
       "env": "stage",
@@ -3530,265 +4190,6 @@
       ]
     },
     {
-      "id": 51131,
-      "env": "stage",
-      "number": "LivePlus-Priority-stage-20261112.6",
-      "result": "partiallySucceeded",
-      "when": "2026-11-12T16:32:32.182842Z",
-      "triggeredBy": "Akshay Sawant",
-      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51131",
-      "modulesPassed": 27,
-      "modulesFailed": 1,
-      "modulesRan": 28,
-      "moduleTotal": 28,
-      "casesPassed": 1902,
-      "casesFailed": 11,
-      "modules": [
-        {
-          "priority": 1,
-          "name": "Create Pad and Well",
-          "cases": 109,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 2,
-          "name": "Well and Treatment",
-          "cases": 99,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 3,
-          "name": "Job Comment",
-          "cases": 13,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 4,
-          "name": "Channel Input Model",
-          "cases": 100,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 5,
-          "name": "Drilled Hole",
-          "cases": 261,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 6,
-          "name": "Casing",
-          "cases": 16,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 7,
-          "name": "Surface Line and Tubing",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 8,
-          "name": "Perforation",
-          "cases": 15,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 9,
-          "name": "Directional Survey",
-          "cases": 9,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 10,
-          "name": "Path Summary",
-          "cases": 6,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 11,
-          "name": "Schematic 2D",
-          "cases": 11,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 12,
-          "name": "Heat Transfer Parameters",
-          "cases": 42,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 13,
-          "name": "Reservoir Parameters",
-          "cases": 48,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 14,
-          "name": "Add Material",
-          "cases": 215,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 15,
-          "name": "Add Chemical",
-          "cases": 21,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 16,
-          "name": "Edit Fluid",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 17,
-          "name": "Design Treatment Scheduled",
-          "cases": 230,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 18,
-          "name": "Actual Treatment Scheduled",
-          "cases": 11,
-          "status": "failed",
-          "detail": "Actual schedule",
-          "failedCases": [
-            {
-              "id": 127658,
-              "title": "Verify user cannot edit Actual Treatment Schedule through browser inspect/dev tools"
-            },
-            {
-              "id": 133838,
-              "title": "Verify complete column order in Actual Treatment Schedule matches design"
-            },
-            {
-              "id": 133845,
-              "title": "Verify column order with fully populated Actual Treatment Schedule"
-            },
-            {
-              "id": 133848,
-              "title": "Verify Dashboard column order is consistent with Actual Treatment Schedule"
-            },
-            {
-              "id": 133856,
-              "title": "Verify Dashboard Treatment Schedule column order matches Actual Treatment Schedule page"
-            },
-            {
-              "id": 134157,
-              "title": "Verify confirmation message on importing design to actual schedule"
-            },
-            {
-              "id": 134384,
-              "title": "Validate the UI and the placement of the Actual treatment schedule tab."
-            },
-            {
-              "id": 134743,
-              "title": "Check on the Actual Treatment Schedule, there is not Recalculate button"
-            },
-            {
-              "id": 134745,
-              "title": "Check on the Actual Treatment Schedule, on SAVE button save and recalculate functionality should happen"
-            },
-            {
-              "id": 136053,
-              "title": "Copy Design to Actual Schedule"
-            },
-            {
-              "id": 136068,
-              "title": "Verify the behaviour of table in Actual treatment schedule"
-            }
-          ]
-        },
-        {
-          "priority": 19,
-          "name": "Treatment Totals",
-          "cases": 4,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 20,
-          "name": "Entry Friction",
-          "cases": 46,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 21,
-          "name": "Plots",
-          "cases": 278,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 22,
-          "name": "Plot in Word Report",
-          "cases": 1,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 23,
-          "name": "Material Usage",
-          "cases": 10,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 24,
-          "name": "Post Job Data",
-          "cases": 20,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 25,
-          "name": "User Defined Channel",
-          "cases": 41,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 26,
-          "name": "Version Control",
-          "cases": 80,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 27,
-          "name": "Dashboard",
-          "cases": 52,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 28,
-          "name": "User Management",
-          "cases": 150,
-          "status": "passed",
-          "detail": ""
-        }
-      ]
-    },
-    {
       "id": 51142,
       "env": "stage",
       "number": "LivePlus-Priority-stage-20261112.11",
@@ -4924,219 +5325,6 @@
               "title": "Verify the behaviour of table in Actual treatment schedule"
             }
           ]
-        },
-        {
-          "priority": 19,
-          "name": "Treatment Totals",
-          "cases": 4,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 20,
-          "name": "Entry Friction",
-          "cases": 46,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 21,
-          "name": "Plots",
-          "cases": 278,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 22,
-          "name": "Plot in Word Report",
-          "cases": 1,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 23,
-          "name": "Material Usage",
-          "cases": 10,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 24,
-          "name": "Post Job Data",
-          "cases": 20,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 25,
-          "name": "User Defined Channel",
-          "cases": 41,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 26,
-          "name": "Version Control",
-          "cases": 80,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 27,
-          "name": "Dashboard",
-          "cases": 52,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 28,
-          "name": "User Management",
-          "cases": 150,
-          "status": "not-run",
-          "detail": ""
-        }
-      ]
-    },
-    {
-      "id": 51130,
-      "env": "stage",
-      "number": "LivePlus-Priority-stage-20261112.5",
-      "result": "succeeded",
-      "when": "2026-11-12T15:25:07.6784561Z",
-      "triggeredBy": "Akshay Sawant",
-      "url": "https://dev.azure.com/Stratagen/Live%20Plus/_build/results?buildId=51130",
-      "modulesPassed": 1,
-      "modulesFailed": 0,
-      "modulesRan": 1,
-      "moduleTotal": 28,
-      "casesPassed": 261,
-      "casesFailed": 0,
-      "modules": [
-        {
-          "priority": 1,
-          "name": "Create Pad and Well",
-          "cases": 109,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 2,
-          "name": "Well and Treatment",
-          "cases": 99,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 3,
-          "name": "Job Comment",
-          "cases": 13,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 4,
-          "name": "Channel Input Model",
-          "cases": 100,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 5,
-          "name": "Drilled Hole",
-          "cases": 261,
-          "status": "passed",
-          "detail": ""
-        },
-        {
-          "priority": 6,
-          "name": "Casing",
-          "cases": 16,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 7,
-          "name": "Surface Line and Tubing",
-          "cases": 15,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 8,
-          "name": "Perforation",
-          "cases": 15,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 9,
-          "name": "Directional Survey",
-          "cases": 9,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 10,
-          "name": "Path Summary",
-          "cases": 6,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 11,
-          "name": "Schematic 2D",
-          "cases": 11,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 12,
-          "name": "Heat Transfer Parameters",
-          "cases": 42,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 13,
-          "name": "Reservoir Parameters",
-          "cases": 48,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 14,
-          "name": "Add Material",
-          "cases": 215,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 15,
-          "name": "Add Chemical",
-          "cases": 21,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 16,
-          "name": "Edit Fluid",
-          "cases": 10,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 17,
-          "name": "Design Treatment Scheduled",
-          "cases": 230,
-          "status": "not-run",
-          "detail": ""
-        },
-        {
-          "priority": 18,
-          "name": "Actual Treatment Scheduled",
-          "cases": 11,
-          "status": "not-run",
-          "detail": ""
         },
         {
           "priority": 19,
